@@ -1,0 +1,16 @@
+/*!
+ * Button Element v0.10
+ */
+.submit_loader{position: relative;pointer-events: none;opacity: 0.8}
+
+.submit_loader:after {
+    background: #3aa1e2 url(button_loader.gif) no-repeat center;
+    background-size: 20px;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute; pointer-events: none;
+
+}

@@ -1,0 +1,1885 @@
+.catalog .additional-sizes{margin-top: 0px;}
+
+.general-info-form {margin-top: 20px;}
+
+.general-info {margin-top: 20px;}
+
+.avtar-circle img {border-radius: 999em;display: block;height:50px;width: 50px;}
+
+.dashboard .dataTables_wrapper .dataTables_scroll{padding-bottom: 0px;}
+
+.hardware-tab-class td:nth-child(1) {
+
+  width: 12%;
+
+}
+
+.hardware-tab-class .invoice-table > tbody > tr > td:nth-child(2) {
+
+  width: 29%;
+
+}
+
+.hardware-tab-class td:nth-child(3) {
+
+  width: 12%;
+
+}
+
+.hardware-tab-class .invoice-table > tbody > tr > td:nth-child(4) {
+
+  width: 12.5%;
+
+}
+
+.hardware-tab-class td:nth-child(5) {
+
+  width: 12.5%;
+
+}
+
+@media screen and (min-width:1400px){
+
+
+
+.invoice-table.item-custom-class .itemDescription {
+
+  height:150px;
+
+  width:600px !important; 
+
+}
+
+}
+
+
+
+@media screen and (min-width:1900px){
+
+  .Common-item .item-custom-class .itemothertbody textarea.form-control.itemDescription, .other-description {width: 964px !important;}
+
+  .Common-item .itemothertbody textarea.form-control.itemDescription, .other-description {width:720px !important;}
+
+.item-other-class .td_kitchen_total, .item-other-class .td_kitchen_qty, .item-other-class .td_kitchen_rate, .otherClass-table .work_item_name, .otherClass-table .itemTotal, .otherClass-table .other-rate, .otherClass-table .other-qty, #newChoice .other-rate, #newChoice .other-qty, #newChoice .other-itemName {width:auto;}
+
+  #newChoice .work_item_name, #newChoice .itemTotal { width:auto;}
+
+    
+
+  .dataTables_wrapper .paging_ellipses .paginate_button.previous, .dataTables_wrapper .paging_ellipses .paginate_button.next {padding: 7px !important;}
+
+}
+
+
+
+@media screen and (min-width:1500px){
+
+  .Common-item .item-custom-class .itemothertbody textarea.form-control.itemDescription, .other-description {width: 740px !important;}
+
+  .Common-item .itemothertbody textarea.form-control.itemDescription, .other-description {width:640px !important}
+
+}
+
+
+
+@media screen and (min-width:1400px){
+
+  .kitchen_table_main .td_kitchen_rate .form-control{width:100px}
+
+  .kitchen_table_main .td_kitchen_qty .form-control{width:100px}
+
+  .kitchen_table_main .td_kitchen_total .form-control{width:100px !important}
+
+
+
+  
+
+}
+
+@media screen and (min-width:768px ) and (max-width: 1366px){
+
+  .kitchen-cont-wrp .hardware-table-count .HardwareCloneInput{width:100%; display: block !important; overflow: auto;}
+
+    .add-molding-table {
+
+    display: block;
+
+    max-width: 100%;
+
+    overflow-x: auto;
+
+}
+
+.item-other-class .td_kitchen_total, .item-other-class .td_kitchen_qty, .item-other-class .td_kitchen_rate, .otherClass-table .work_item_name, .otherClass-table .itemTotal, .otherClass-table .other-rate, .otherClass-table .other-qty{width: 120px !important;}
+
+
+
+  
+
+  
+
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:1200px ) and (max-width: 1600px){
+
+  .side-menubar, .navbar-header{width: 214px;}
+
+  .navbar-container,.fold-hover .navbar-container{margin-left:214px;}
+
+  .fold-hover .navbar-header, .fold-hover .side-menubar {width:214px;}
+
+  .page {margin-left: 214px;}
+
+  .page .container-fluid {padding:30px 20px;}
+
+  .table > thead > tr > th, .table > tbody > tr > th{font-size: 13px}
+
+  .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{font-size: 12px; padding:12px 9px;}
+
+  .navbar-avtar .user-name{font-size:15px;}
+
+  .avtar-circle{width: 40px; height: 40px;}
+
+  .avtar-circle img {border-radius: 999em;display: block;height: 40px;width: 40px;}
+
+  .page-title{margin-left: 15px;}
+
+  .page-title h3{font-size:18px}
+
+  .create-btn .button{font-size: 15px; padding:8px 15px;}
+
+  .table-main h4{font-size: 17px;}
+
+  .side-menubar ul li a{font-size: 14px;}
+
+  .side-menubar ul li a{padding: 10px 15px;}
+
+  .table-wrap .label{font-size:12px; padding:4px 10px;}
+
+  .btn.btn-default.dropdown-toggle, .input-group-addon{padding-left: 6px;padding-right: 6px;font-size: 13px;}
+
+  .order-input-wrp .input-group{margin-left: 15px;}
+
+  .order-input-wrp .input-group-addon{width: 45px;}
+
+  .nav-tabs > li > a{min-width: 140px; padding: 12px 15px; font-size: 14px;}
+
+  .button-wrp .btn{width: 100px; padding: 7px 5px;}
+
+  .invoice-review-table td{font-size: 14px;}
+
+  .table-default tr td{font-size: 11px; line-height: 17px;}
+
+  .table-default tr td p {color: #8e8e8e;font-size: 9px;padding: 0 4px;text-align: right;}
+
+  h5{font-size: 14px;}
+
+  .note-cont p{font-size: 12px;}
+
+  .option-wrp a{height: 32px; padding:0 8px; width: 32px; font-size: 14px; line-height: 30px; margin-right: 2px }
+
+  .status_select{height: 36px;}
+
+  .invoice-table > thead > tr > th, .invoice-table.check-box-grid > tbody > tr > td{width: auto;}
+
+  .catalog .left_section{width: 45%;}
+
+  .catalog .right_section{width: 55%;}
+
+  .catalog-view .prodcut-img{height: 300px}
+
+  .product-details h6 {font-size: 12px; margin-bottom: 6px; margin-top: 0;}
+
+  .product-details p{font-size: 15px;}
+
+  .catalog-view .more-views ul li{width: 40px; height: 40px; line-height: 20px;}
+
+  .notes-box p {color: #666766;font-size: 16px;font-weight: 300;}
+
+  .cross-refrence-section .match-wrp .select-box {font-size: 15px;}
+
+  .cross-refrence-section .match-wrp h6{font-size: 13px;}
+
+  .table-wrap .dataTables_wrapper .dataTables_paginate, .table-wrap .dataTables_wrapper .dataTables_length, .attributes-table .dataTables_wrapper .dataTables_paginate, .attributes-table .dataTables_wrapper .dataTables_length{float: none; text-align: left;}
+
+  .nav-tabs.tabs-full > li > a{min-width: 158px;}
+
+  .general-info .value-text{font-size:14px;}
+
+  .general-info input[type="checkbox"]{margin-right:5px;}
+
+  .additional-sizes .item-rw h3{font-size:24px;}
+
+  .notes-box .inner .notes-text{font-size:16px;}
+
+  .min-bottom-90{margin-top:-70px;}
+
+  .navbar-toolbar-right {margin-right: 0;padding-top: 18px;}  
+
+  .dataTables_wrapper .dataTables_paginate span{margin:0 11px;}
+
+  .dataTables_wrapper .dataTables_paginate .ellipsis {margin: 0;padding-right: 0;}
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button{padding:7px 10px; font-size: 14px;}
+
+  .quote-for-pagination .dataTables_paginate .paginate_button, .quote-for-pagination .dataTables_paginate .paginate_button:hover{padding:5px 7px !important; font-size: 10px !important;}
+
+  .quote-for-pagination .dataTables_paginate span .paginate_button:first-child{padding:5px; font-size: 10px !important;}
+
+  .quote-for-pagination .paginate_button.current:hover{padding:5px !important; font-size: 10px !important;}
+
+  .quote-for-pagination .paginate_button .next{padding:5px 8px; font-size: 10px !important;}
+
+  #QuotesTable_next, #QuotesTable_previous{padding:5px 10px !important; font-size: 12px !important}
+
+  .quote-for-pagination .paginate_button{font-size: 11px !important;padding: 6px 10px !important;}
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {font-size: 14px !important;padding: 9px 14px !important;}
+
+  .kitchen-main .nav.nav-tabs{padding: 0;}
+
+  .kitchen-main .nav-tabs.tabs-full > li > a{min-width: 148px;}
+
+
+
+  /*.hardware-tab-class table.HardwareCloneInput, #hardwarenewChoice table.HardwareCloneInput{display:block !important; width:100%; overflow:auto}*/
+
+  .hardware-tab-class table.HardwareCloneInput .plus-item-img > img {max-width: inherit;}
+
+  .hardware-tab-class .hardwareitemplus {width: 60%;}
+
+  #hardwarebody td {width: 67px;}
+
+  .kitchen-cont-wrp .table.invoice-table td .remove {float: left;}
+
+  .kitchen-cont-wrp #hardwarenewChoice #hardwarebtnDel {text-align: center; width: 67px;}
+
+  .kitchen-main .owl-carousel .owl-item img{height:90px;}
+
+  .kitchen-main .item.link{width:165px;}
+
+
+
+#moldingItems #moldingtbody1 tr.no-border td.appendClass {
+
+  float:inherit;
+
+}
+
+
+
+.static-tab-content-parent .static-tab-content-inner .other-manual-color {
+
+  float: left;
+
+  margin-left: 9px;
+
+  width: 32%;
+
+}
+
+.static-tab-content-inner .finish-text{width:82%}
+
+.kitchen-cont-wrp .inside-content.rightPart .finish-text{width:82%}
+
+.kitchen-cont-wrp .inside-content.rightPart .other-manual-color{width: 27%}
+
+
+
+/* 11-05-2017*/
+
+.kitchen-main .tab-content .owl-carousel {padding: 30px 46px;}
+
+.kitchen-main .owl-nav .owl-next{right:16px}
+
+.kitchen-main .owl-nav .owl-prev{left:16px}
+
+.form-control.MDqtykeyup.work_item_name.qty-input, .form-control.Mdpricekeyup.work_item_name.qty-input, .form-control.Mdpricekeyup.work_item_name {
+
+  width: 80px;
+
+}
+
+#clientModal .modal-dialog.modal-lg{width:1000px; max-width:100%;}
+
+
+
+.item-other-class .other-description, .otherClass-table .other-description, .otherClass-table .other-description .itemDescription, #newChoice .other-description, #newChoice .other-description .itemDescription {
+
+  width: 360px !important;
+
+}
+
+
+
+.item-other-class .td_kitchen_item, .otherClass-table .other-itemName, .otherClass-table .other-itemName input, #newChoice .other-itemName, #newChoice .other-itemName input{width:190px !important;}
+
+
+
+
+
+.table.invoice-table thead.sticky-thead {background-color: #ffffff;height: 43px;padding-left: 12px;position: fixed;right: 0;top: 77px;width:calc(100% - 221px);z-index: 99; padding-right: 12px;}
+
+.table.invoice-table .sticky-thead th.th-item{  width:11%;}
+
+.table.invoice-table .sticky-thead th.th-measurement{  width:210px;}
+
+.table.invoice-table .sticky-thead th.th-description {  width:327px;}
+
+.table.invoice-table .sticky-thead th.th-material{  width:130px;}
+
+.table.invoice-table .sticky-thead th.th-sold{  width:120px;}
+
+.table.invoice-table .sticky-thead th.th-qty{  width: 118px;}
+
+.table.invoice-table .sticky-thead th.th-price{  width: 119px;}
+
+.table.invoice-table .sticky-thead th.th-total{  width: 126px;}
+
+
+
+
+
+.invoice-table #theadotherClass tr > th {border-bottom: 2px solid #d1d3d2 !important;}
+
+.table.invoice-table .sticky-thead th.th-other-item{width: 210px;}
+
+.table.invoice-table .sticky-thead th.th-other-description{width: 393px;}
+
+.table.invoice-table .sticky-thead th.th-other-rate{width: 102px;}
+
+.table.invoice-table .sticky-thead th.th-other-qty{width: 102px;}
+
+.table.invoice-table .sticky-thead th.th-other-total{width: 325px;}
+
+
+
+#theadotherClass{padding-left: 0;}
+
+.table.invoice-table .sticky-thead th.kitchen-itemTh{width: 20%;}
+
+.table.invoice-table .sticky-thead th.descriptionTh{width: 36%;}
+
+.table.invoice-table .sticky-thead th.rateTh{width: 12%;}
+
+.table.invoice-table .sticky-thead th.qtyTh{width: 12%;}
+
+.table.invoice-table .sticky-thead th.totalTh{width: 20%;}
+
+
+
+
+
+
+
+
+
+.dataTables_wrapper .paging_ellipses .paginate_button.previous, .dataTables_wrapper .paging_ellipses .paginate_button.next {padding: 7px !important;}
+
+
+
+}
+
+/*----------------------------*/
+
+/* For Tablet Landscape view 
+
+/*--------------------------*/
+
+
+
+@media screen and (min-width:992px ) and (max-width: 1199px){
+
+
+
+  /*---------------------*/
+
+  /*  Sidebar navigation 
+
+  /*---------------------*/
+
+
+
+  .side-menubar,.navbar-header{ width:58px;}
+
+  .navbar-container{float:none; margin-left:60px;}
+
+  .page{margin-left:60px;}
+
+  .side-menubar li{white-space:nowrap;}
+
+
+
+  .side-menubar li span{transition:0.3s all ease-in-out;}
+
+  .side-menubar ul li .ico { margin-right: 20px;transition:0.3s all ease-in-out;}
+
+
+
+  /**************************
+
+  Sidebar navigation  END
+
+  ***************************/
+
+  .page .container-fluid { padding: 20px;}
+
+  .table-main .table-wrap { margin-bottom: 30px;}
+
+  .table-main h4{font-size:2rem;}
+
+  .qoute-details{margin-top:0px;}
+
+  .order-input-wrp { margin-top: 6px;}
+
+  .invoice-deliver .number-text{display:inline-block;}
+
+  .invoice-deliver > thead > tr > th, .invoice-deliver > tbody > tr > td{padding:10px}
+
+  .nav-tabs.tabs-full > li > a { min-width: 160px; padding:16px 15px;}
+
+  .product-details p{font-size:18px;}
+
+  .product-details .label { font-size: 13px; font-weight: 500; padding: 1px 13px;}
+
+  .product-details h6{font-size:14px;}
+
+  .notes-box p {font-size: 16px;}
+
+  .cross-refrence-section .match-wrp .select-box {font-size: 15px;}
+
+  .additional-sizes .item-rw h3{font-size:22px;}
+
+  .table-style-2 .dataTables_wrapper .dataTables_paginate{margin-left:0px;}
+
+  .dataTables_wrapper .dataTables_scroll{padding-bottom:100px;}
+
+  .category-table h2{text-align:left;}
+
+  .attributes-table .dataTables_wrapper .dataTables_length{float:left; margin-top:5px;}
+
+  .button-wrp.editBtn{margin-right: 15px; margin-top:-40px;}
+
+  .button-wrp.editBtn .btn{ min-width: 95px; width: auto;}
+
+  .ct-chart .ct-label { font-size: 13px;}
+
+  .min-bottom-90{  margin-top: 0;}
+
+  table.display-Table, table.invoice-details, table.categoryTable, table.shipingPricing {padding-bottom: 0;}
+
+
+
+  /**/
+
+  .general-info-form .carousel.slide.address {margin-bottom: 40px;min-height: 90px;}
+
+  .qoute-details .button-wrp.button-submit{width:auto;}
+
+  .large-logo {display: none;}
+
+  .small-logo {display: block;margin: 0 auto;max-width: 100%;padding: 4px 8px;width: 60px;}
+
+  .invoice-table .moldingtbody tr > td{vertical-align:top}
+
+  .address{padding-bottom:10px;}
+
+  .edit-btn img{width:14px;}
+
+  .notes-box .edit-btn {float: right;}
+
+  .general-info .value-text{font-size:14px;}
+
+  .general-info label{font-size:12px;}
+
+  .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{font-size:13px;}
+
+  .dataTables_wrapper .dataTables_filter{display:none;}
+
+  .general-info .value-text{font-size:15px;}
+
+  .general-info label{font-size:12px;}
+
+  table.shipingPricing tbody tr td:first-child, table.shipingPricing thead tr th:first-child{padding-left: 15px;}
+
+  .login-box{width:54%; margin:20px auto}
+
+  .login-body .mobile-header{border-bottom: 2px solid #dddddd;text-align: center; display:block; padding:15px 0px}
+
+  .login-body .main-container{top:70px; margin-top:30px}
+
+  .login-body nav.site-navbar {display: none;}
+
+  .wrapper {overflow: hidden;}
+
+  .fold .small-logo {display: block; width: 60px; margin-top:10px;}
+
+  .page-title{margin-left:20px;}
+
+  .fold .page {margin-left: 180px;width: 100%;}
+
+  .fold .side-menubar, .fold .navbar-header {width: 240px;}
+
+  .grey-popup .modal-dialog{padding:20px 15px 10px}
+
+  .main-container .side-menubar .fa-cog, .main-container .side-menubar .fa-usd {margin: 0 20px 0 10px;}
+
+  .kitchen-main .nav-tabs.tabs-full > li > a{min-width:122px}
+
+  #hardwarenewChoice .HardwareCloneInput td:last-child {width:44%;}
+
+  .kitchen-cont-wrp .hardware-table-count .HardwareCloneInput{width:100%; display: block !important; overflow: auto;}
+
+  .static-tab-content-parent .static-tab-content-inner .other-manual-color{margin-left:0}
+
+  /*.login-body .logo-main { display: none;}*/
+
+.kitchen-cont-wrp .dynamic-tabs{margin-top:-45px}
+
+.kitchen-main .kitchen-segment .nav-tabs.tabs-full > li > a{padding:0 5px 10px 30px}
+
+.kitchen-cont-wrp .segment-tab-content .dynamic-tabs li a, .kitchen-main .nav-tabs.tabs-full > li > a {
+
+  font-size: 13px;
+
+  height: 48px;
+
+  line-height: 48px;
+
+  margin-right: 5px;
+
+  min-width: inherit;
+
+  padding: 0 15px;
+
+}
+
+.kitchen-main .dynamic-tabs .nav-tabs li span {
+
+    display: inline-block;
+
+    width: auto !important;
+
+}
+
+.static-tab-content-inner .color-right, .static-tab-content-inner .markup-text, .static-tab-content-inner .finish-text, .static-tab-content-inner .finish-text, .static-tab-content-parent .static-tab-content-inner .other-manual-color {
+
+margin-left:0;
+
+  width: 100%;
+
+}
+
+.invoice-table.item-custom-class .itemDescription{width:350px !important}
+
+.table.invoice-table thead.sticky-thead {position: inherit; background: transparent}
+
+.otherClass-table .other-itemName input{width: 150px !important;}
+
+.otherClass-table .other-qty input{width: 100px !important;}
+
+.hardware-table-count .hardware-right-row .col-sm-3{width: 40%;}
+
+.hardware-table-count .hardware-right-row .col-sm-9{width: 50%;}
+
+.hardware-table-count .hardware-right-row {margin-top: 23px;}
+
+.fold-hover .navbar-header, .fold-hover .side-menubar{width:45px !important;}
+
+.fold-hover .navbar-container{margin-left: 60px;}
+
+.chosen-container.chosen-with-drop .chosen-drop {
+
+  left: 40px !important;
+
+}
+
+.chosen-container .chosen-drop{ position: absolute !important;
+
+    top: auto;
+
+    width: 200px;}
+
+.chosen-container{ position: static;}
+
+.collapse-modification {
+
+  position: static;
+
+  top: -9px;
+
+}
+
+.kitchen-cont-wrp .modification-row .chosen-container-single .chosen-drop {
+
+  margin-left: 5px;
+
+  width: 200px;
+
+}
+
+
+
+.kitchen-main .dynamic-tabs .nav-tabs li span{display: inline-block; width: 100%;}
+
+#windowsItems table{display: block !important; overflow: auto; width: 100%;}
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+/*----------------------------*/
+
+/* For Tablet Portrait view 
+
+/*--------------------------*/
+
+@media screen and (min-width:768px ) and (max-width: 991px){
+
+
+
+  /*---------------------*/
+
+  /*  Sidebar navigation 
+
+  /*---------------------*/
+
+
+
+  .side-menubar,.navbar-header{ width:45px;}
+
+  .navbar-container{float:none; margin-left:60px;}
+
+  .page{margin-left:60px;}
+
+  .side-menubar li{white-space:nowrap;}
+
+  .side-menubar li span{transition:0.3s all ease-in-out;}
+
+  .side-menubar ul li .ico { margin-right: 20px;transition:0.3s all ease-in-out;}  
+
+
+
+
+
+  /**************************
+
+  Sidebar navigation  END
+
+  ***************************/
+
+  .page .container-fluid { padding: 20px;}
+
+  .table-main .table-wrap { margin-bottom: 30px;}
+
+  .table-main h4{font-size:2rem;}
+
+  table.dataTable{padding-bottom:50px;}
+
+  .order-input-wrp { margin-top:4px;}
+
+  .dataTables_wrapper .dataTables_scroll{padding-bottom:100px;}
+
+  .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{font-size:14px;}
+
+  .invoice-table > thead > tr > th, .invoice-table > tbody > tr > td{padding:10px 10px; font-size:13px;}
+
+  .invoice-review-table td{font-size:14px; padding:7px 30px;}
+
+  .button-wrp .btn{min-width:105px; width:auto;}
+
+  .invoice-table > thead > tr > th, .invoice-table.check-box-grid > tbody > tr > td{width:auto;}
+
+  .Order_summary label{font-size:14px;}
+
+  .invoice-deliver .number-text{display:inline-block;}
+
+  .invoice-deliver > thead > tr > th, .invoice-deliver > tbody > tr > td{padding:10px}
+
+  .nav-tabs.tabs-full > li > a { min-width: 140px; padding:12px 15px;}
+
+  .product-details p{font-size:16px;}
+
+  .product-details .label { font-size: 13px; font-weight: 500; padding: 1px 13px;}
+
+  .product-details h6{font-size:14px;}
+
+  .notes-box p {font-size: 16px;}
+
+  .cross-refrence-section .match-wrp .select-box {font-size: 15px;}
+
+  .additional-sizes .item-rw h3{font-size:22px;}
+
+  .table-style-2 .dataTables_wrapper .dataTables_paginate{margin-left:0px;}
+
+  .attributes-wrp .button-wrp { margin-top: 0;}
+
+  .group-bar .table-group-actions, .group-bar .searchSuggested { width: 100%;}
+
+  .category-table h2{text-align:left;}
+
+  .button-wrp.editBtn{margin-right: 15px; margin-top:-40px;}
+
+  .button-wrp.editBtn .btn{ min-width: 95px; width: auto;}
+
+  .ct-chart .ct-label { font-size: 13px;}
+
+  .min-bottom-90 { margin-top: 0;} 
+
+  .main-container{margin-top: 77px;}
+
+  table.display-Table, table.invoice-details, table.categoryTable, table.shipingPricing {padding-bottom: 0;}
+
+
+
+  /**/
+
+  .general-info-form .carousel.slide.address {margin-bottom: 40px;min-height: 90px;}
+
+  .address{padding-bottom:10px;}
+
+  .qoute-details .button-wrp.button-submit{width:auto;}
+
+  .large-logo {display: none;}
+
+  .small-logo {display: block;margin: 0 auto;max-width: 100%;padding: 4px 8px;width: 60px;}
+
+  .invoice-table .moldingtbody tr > td{vertical-align:top}
+
+  .edit-btn img{width:14px;}
+
+  .notes-box .edit-btn {float: right;}
+
+  .general-info .value-text{font-size:14px;}
+
+  .general-info label{font-size:12px;}
+
+  .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{font-size:13px;}
+
+  .dataTables_wrapper .dataTables_filter{display:none;}
+
+  .general-info .value-text{font-size:15px;}
+
+  .general-info label{font-size:12px;}
+
+  .kitchen-main .kitchen-segment .nav-tabs.tabs-full > li {background: #afb0b3 none repeat scroll 0 0; border: 1px solid #dddddd; margin-right: 5px; padding: 0 5px; width: 192px; box-shadow:none}
+
+  .kitchen-cont-wrp .kitchen-main .nav-tabs.tabs-full > li > a {/*min-width: inherit;*/padding: 10px 2px; font-size:12px;}
+
+  .kitchen-segment .nav.nav-tabs.tabs-full{padding-left:20px}
+
+  .list-listing{padding:6px 0 20px; margin-bottom:10px;}
+
+  .items-info .list-listing{padding:0 0 70px}
+
+  .dynamic-tabs{margin-top: -40px}
+
+  .nav-tabs.tabs-full > li > a:last-child {margin: 0;}
+
+  .kitchen-main .kitchen-segment .nav-tabs.tabs-full > li.tab4{margin-top:10px}
+
+  table.shipingPricing tbody tr td:first-child, table.shipingPricing thead tr th:first-child{padding-left: 15px;}
+
+  .login-box{width:57%; margin:20px auto}
+
+  .login-body .mobile-header{border-bottom: 2px solid #dddddd;text-align: center; display:block; padding:15px 0px}
+
+  .login-body .main-container{top:70px;}
+
+  .login-body nav.site-navbar {display: none;}
+
+  .fold .small-logo {margin:10px auto 0;width: 60px;}
+
+  .page-title{margin-left:20px;}
+
+  .wrapper {overflow: hidden;}
+
+  .general-info .col-md-3.col-sm-6{min-height:inherit}
+
+  .fold .page {margin-left: 180px;width: 100%;}
+
+  .fold .side-menubar, .fold .navbar-header {width: 230px;}
+
+  .grey-popup .modal-dialog{padding:20px 15px 10px}
+
+  .fold-hover .navbar-header, .fold-hover .side-menubar{width:45px !important;}
+
+  .fold-hover .navbar-container{margin-left: 60px;}
+
+
+
+  /*5-4-2017*/
+
+
+
+  .side-menubar ul li a{padding:13px 12px 13px 8px}
+
+  .main-container .side-menubar .fa-cog, .main-container .side-menubar .fa-usd {margin: 0 20px 0 10px;}
+
+  .kitchen-main .tab-content .owl-carousel{padding:30px}
+
+
+
+  .static-tab-content-inner .color-text, .static-tab-content-inner .markup-text, .static-tab-content-inner .drawer-sample > h4{display:block;}
+
+  .static-tab-content-inner .drawer-sample .sample-door{padding:0 15px 0 0}
+
+  .kitchen-cont-wrp .hardware-table-count .HardwareCloneInput{width:100%; display: block !important; overflow: auto;}
+
+  .kitchen-cont-wrp .CloneInput .form-control {width: 100px;}
+
+  .kitchen-cont-wrp .CloneInput{width:100%; display:block !important; overflow: auto;}
+
+  #form_add_client .address-info .col-sm-4, .address-info .col-sm-12{padding:0 15px}
+
+  .nav-tabs.tabs-full > li > a{min-width:125px; font-size:14px; margin: 0 5px 0 0 !important}
+
+  .hardware-table-count .hardware-right-row {
+
+  margin-top: -5px;
+
+ }
+
+ .hardware-table-count .hardware-right-row .col-sm-9 {
+
+  float: right;
+
+  padding: 0;
+
+  width: 100%;
+
+}
+
+.hardware-right-row .col-sm-3 {
+
+  padding-left: 0;
+
+}
+
+.kitchen-main .owl-nav .owl-prev{left:10px;}
+
+.kitchen-main .owl-nav .owl-next{right:0px;}
+
+/*.login-body .logo-main{display:none}*/
+
+.kitchen-cont-wrp .segment-tab-content .dynamic-tabs li a{min-width:185px !important; height:auto;}
+
+.kitchen-cont-wrp .static-tabs {
+
+  float: none;
+
+  position: absolute;
+
+  right: 32px;
+
+  top: 78px;
+
+}
+
+.kitchen-cont-wrp .dynamic-tabs{margin-top:0}
+
+.kitchen-main .plus-tab img{margin-top:8px}
+
+.static-tab-content-inner{padding:20px;}
+
+.kitchen-cont-wrp .inside-content.rightPart{padding:0}
+
+.Drawer-tab-class .static-tab-content-inner .chosen-container-single .chosen-single, .finish-text select, .Drawer-tab-class .static-tab-content-inner .chosen-container, .Drawer-tab-class .chosen-container-single .chosen-drop, .static-tab-content-inner .color-row, .static-tab-content-inner .color-text{width:100% !important}
+
+.static-tab-content-inner .color-right, .static-tab-content-inner .markup-text, .static-tab-content-inner .finish-text, .static-tab-content-inner .finish-text, .static-tab-content-parent .static-tab-content-inner .other-manual-color {
+
+margin-left:0;
+
+  width: 100%;
+
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{padding:0.5em 10px}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+
+  font-size: 14px !important;
+
+  line-height:normal;
+
+  vertical-align:top;
+
+
+
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+
+  line-height:18px;
+
+vertical-align:top;
+
+  padding: 0.5em 10px;
+
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+
+  border: 1px solid #d2d4d4;
+
+  border-radius: 99em;
+
+  font-size: 14px !important;
+
+  margin: 0;
+
+  padding: 6px 15px !important;
+
+}
+
+
+
+.static-tab-content-inner .sub-drawer-option {
+
+  float: none;
+
+  margin: 10px 0 0 18px;
+
+  width: 100%;
+
+}
+
+.qoute-details .plus-item {
+
+  margin: 0;
+
+}
+
+.kitchen_table_main .plus-item{margin:-8px 0 0;}
+
+#windowsItems table{display: block !important;
+
+    overflow: auto;
+
+    width: 100%;}
+
+    .segment-tab-content table{width: auto !important;}
+
+/*    .otherClass-table .other-itemName input, .otherClass-table .other-description .itemDescription, #newChoice #other-itemName input, #newChoice .other-itemName input, #newChoice .itemDescription{width:auto !important;}*/
+
+.otherClass-table .other-itemName input{width: 150px !important;}
+
+.otherClass-table .other-qty input{width: 100px !important;}
+
+.invoice-table.item-custom-class .itemDescription{width:350px !important}
+
+  
+
+.kitchen-cont-wrp .segment-tab-content .dynamic-tabs li a{min-width: 0 !important; width: auto; !important; }
+
+  .kitchen-main .nav.nav-tabs{ padding: 0 !important;}
+
+.kitchen-cont-wrp .static-tabs {top: 40px;}
+
+.kitchen-main .static-tabs .nav-tabs.tabs-full > li > a{ min-width: 80px;}
+
+  
+
+.kitchen-cont-wrp .td_kitchen_total .form-control {
+
+width: 100px !important;
+
+}
+
+
+
+
+
+#windowsItems .EbidClass{width:180px;}
+
+.dataTables_wrapper .paging_ellipses .paginate_button.previous, .dataTables_wrapper .paging_ellipses .paginate_button.next {padding: 7px !important;}
+
+.table.invoice-table thead.sticky-thead {position: inherit; background: transparent}
+
+.sendEmailModal.grey-popup .modal-dialog {width: calc(100% - 40px) !important;}
+
+.hardware-left{ width: 54%; }
+
+.hardware-right-row{width: 45%;}
+
+.hardware-right-row .col-sm-9{ width: 65%; }
+
+.hardware-table-count .hardware-right-row .col-sm-9{width: 65%;}
+
+.kitchen-cont-wrp .hardware-right{padding: 0;}
+
+.hardware-table-count .hardware-right-row{margin-top: 23px;}
+
+.hardware-left .col-sm-8 {width: 130px}
+
+.hardware-left .col-sm-4 .notification-status{width: 150px}
+
+.chosen-container.chosen-with-drop .chosen-drop {
+
+  left: 40px !important;
+
+}
+
+.chosen-container .chosen-drop{ position: absolute !important;
+
+    top: auto;
+
+    width: 200px;}
+
+.chosen-container{ position: static;}
+
+.collapse-modification {
+
+  position: static;
+
+  top: -9px;
+
+}
+
+.kitchen-cont-wrp .modification-row .chosen-container-single .chosen-drop {
+
+  margin-left: 5px;
+
+  width: 200px;
+
+}
+
+.kitchen-main .dynamic-tabs .nav-tabs li span{display: inline-block; width: 100%;}
+
+.kitchen-cont-wrp .tabs-full > li:first-child {padding-left: 8px;}
+
+.otherClass-table textarea.form-control.itemDescription {height: 38px;width: 180px !important;}
+
+
+
+
+
+  
+
+}
+
+/*------------------ */
+
+/*  For Mobile
+
+/*------------------ */
+
+
+
+@media screen and (max-width: 767px){
+
+
+
+  .side-menubar,.navbar-header{ width:0px;}
+
+  .navbar-container{float:none; margin-left:0px;}
+
+  .page{margin-left:0px; width:100%;}
+
+  .side-menubar li{white-space:nowrap;}
+
+  .side-menubar li span{transition:0.3s all ease-in-out;}
+
+  .side-menubar ul li .ico { margin-right:0px;transition:0.3s all ease-in-out;}
+
+  .fold .navbar-header{width:0px}
+
+  .fold .side-menubar{ width:230px;}
+
+  .fold .navbar-container{float:none; margin-left:0;}
+
+  .fold .page{margin-left:180px;}
+
+  .fold .side-menubar ul li .ico{margin-right:8px;}
+
+  .nav-tabs > li {padding: 0; margin: 0 0 20px;}
+
+
+
+  /**************************
+
+  Sidebar navigation  END
+
+  ***************************/
+
+  .dataTables_wrapper .dataTables_scroll{padding-bottom:0px;}
+
+  .dataTables_wrapper .dataTables_paginate{width:100%;}
+
+  .dataTables_wrapper .dataTables_length {float: left;margin-bottom: 20px;margin-top: 0;width: 100%;}
+
+  .site-navbar {height: 60px; top:78px;}
+
+  .main-container{overflow-x:hidden;margin-top:138px;}
+
+  .page .container-fluid{padding:20px 15px;}
+
+  .label{padding:4px 10px}
+
+  .page-title h3{font-size:17px; margin-top:0px;}
+
+  .navbar-toolbar-left {float: left; padding-top:19px;}
+
+  .navbar-toolbar-right{float:right;padding-top: 10px;}
+
+  .avtar-circle, .avtar-circle img{width:40px; height:40px;}
+
+  .navbar-right .dropdown-menu{left:auto; right:20px;}
+
+  .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{white-space:nowrap; padding:14px 15px 14px 15px;}
+
+  .nav-tabs > li{display:block;float:none;margin-bottom: -1px;margin-right:0px; height:45px;}
+
+  .nav-tabs > li > a{margin-right:0px; min-width:auto;}
+
+  .nav-tabs > li:last-child{margin-right:0px;}
+
+  .nav.nav-tabs {clear: both;display: block;width: 100%; position: relative;}
+
+  .btn-lg { font-size: 16px; padding: 6px 15px;}
+
+  .option-wrp {margin-bottom: 15px;text-align: center;width: 100%;}
+
+  .invoice-table.history-table > thead > tr > th {font-size: 14px;white-space: nowrap;}
+
+  .button-wrp { clear: both; display: flex; float: none !important; text-align: center;}
+
+  .button-wrp .btn{ border: 0 none; flex: 1 1 0; margin-left: 7px; outline: medium none; padding: 9px 22px; width:auto;}
+
+  .button-wrp .btn:first-child{margin-left:0px;}
+
+  .general-info {box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);margin-top: 20px;padding: 20px;}
+
+  .add-molding-table{max-width: 100%;overflow-x: auto;display: block !important;}  
+
+  .invoice-review-table td{padding:10px 20px;}
+
+  .general-info label{color:#333; font-weight:600;}
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active{ font-size: 14px !important;margin: 0 0 8px; padding: 8px 15px !important;}
+
+  .order-input-wrp { margin-top: 20px;}
+
+  .invoice-review.pull-right {float: none !important;margin: 0 auto;max-width: 310px;}
+
+  .status_select{margin:0 auto 20px; width:130px; display:block;}
+
+  .nav-tabs.tabs-full > li > a {font-size: 13px;min-width: auto;padding: 5px 5px; height:100%; line-height:32px; font-size:12px; display: block;}
+
+  .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td, .table > thead > tr > th, .table > tbody > tr > th{font-size:14px;}
+
+  .product-image-main {float: none;max-width:450px;width: 100%; margin:0 auto}
+
+  .catalog-view .prodcut-img{height:auto}
+
+  .product-details {float: left;padding: 20px;width: 100%;box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); margin-top:20px;}
+
+  .cross-refrence-section .box-wrp {clear: both;float: left;margin-bottom: 20px;width: 100%;}
+
+  .additional-sizes .item-rw h3{font-size:20px;}
+
+  .category-table .top-bar {margin-top: 0;}
+
+  .group-bar .searchSuggested { width: 100%; margin-top:10px;}
+
+  .accordion .accordion-header::after{top:19px;}
+
+  .table-group-actions{display:flex; border:1px #ccc solid; width:100%;}
+
+  .table-group-actions button{flex:1 0 0; border-right:1px #ccc solid;}
+
+  .table-group-actions button:last-child{padding-right:10px;}
+
+  .table-group-actions button{flex: 1 0 0px;font-size: 14px;padding: 10px;}
+
+  .accordion .accordion-header{font-size:15px; padding:10px 20px;}
+
+  .accordion-content ul li{padding:10px 30px}
+
+  .table-style-2 .dataTables_wrapper .dataTables_paginate{margin:20px 0px;}
+
+  .total-grid .grid-box{width:100%; margin-right:0px;}
+
+  .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td, .table > thead > tr > th, .table > tbody > tr > th{white-space:nowrap}
+
+  .details-wrp h4{font-size:19px;}
+
+  #clientEdit.button-wrp { display: block; float: right !important; margin-top: -40px;}
+
+  .editBtn.button-wrp{display: block; float: right !important; margin-top:0px; margin-right:20px; margin-top:15px;}
+
+  .ct-chart .ct-label {font-size: 13px;}
+
+  .report-filter li{font-size:14px; margin:0 5px}
+
+  .report-dropdown select{width:auto;}
+
+  .bottom-info{font-size:14px;}
+
+  .min-bottom-90 {margin-top:20px}
+
+  .items-info {float: left;width: 100%;}
+
+  .list-listing{padding-bottom:20px;}
+
+  .list-listing li{padding:12px 20px}
+
+  .pricing-filter .form-control {max-width: 330px;}
+
+  .table-style-2 .dataTables_wrapper .dataTables_paginate{margin: 20px 20px 0 0}
+
+  .modal-dialog .actions .btn{min-width:118px;}
+
+  table.dataTable.no-footer{padding-bottom:0px;}
+
+  .table-wrap{margin-bottom:40px}
+
+  .dataTables_wrapper {max-width: 100%;}/*overflow-x: auto;*/
+
+  .qoute-details {margin-top: 20px;}
+
+  .invoice-review-table { width: 100%;}
+
+  button.btn.btn-success.btn-lg {width: auto;font-size: 14px;}
+
+  table.categoryTable tbody tr td {padding: 5px 10px;vertical-align: middle;}
+
+  .attributes-wrp .button-wrp {margin-top:0px; margin-bottom:20px;}
+
+  .invoice-table tr{width: 100%;}
+
+ .kitchen-cont-wrp .invoice-table tbody{width: 100%;display: table;}
+
+ .kitchen-cont-wrp .invoice-table thead{width: 100%;display: table;}
+
+ .bottom .dataTables_wrapper .dataTables_length{margin-top:15px}
+
+
+
+  /**/
+
+  .page-header .navbar-header{display:none;}
+
+  .attach-item > span:first-child {padding-left: 11px;}
+
+  .button-wrp .btn{padding:9px 10px}
+
+  /*.general-info-form .carousel.slide.address {margin-bottom: 40px;min-height: 90px;}*/
+
+
+
+  .address{padding-bottom:10px;}
+
+  .kitchen-cont-wrp .invoice-table .form-control {color: #9b9a9a; height: 40px; width: 150px}
+
+  .modal-dialog .invoice-table tr > th, .modal-dialog .invoice-table tr > td{min-width:100px}
+
+  .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{padding:14px 5px}
+
+  .invoice-review-table td{padding: 10px 8px;}
+
+  .invoice-review-table td:last-child{padding-right:0px;}
+
+  .invoice-review-table tr:last-child td{border-bottom:0px;}
+
+  .modal-body .btn-info{margin-bottom:10px;}
+
+  .login-box{width:84%; margin:20px auto; padding: 20px 20px;}
+  .login-bottom-wrap .login-remember{flex: 0 0 100%;max-width: 100%;}
+  .login-bottom-wrap .forget-password{flex: 0 0 100%;max-width: 100%;}
+  .login-bottom-wrap .forget-password h4{text-align: left;margin-top: 2px;margin-bottom: 15px;}
+
+  .table-main h4 { font-size:20px; font-weight: bold;}
+
+  select#quoteclass { margin-bottom: 10px !important;}
+
+  .payment-form{padding:0px;}
+
+  .page-title {float: right;margin-left: 0;margin-top: 0;position: absolute;right: 20px;top: -50px;vertical-align: middle;}
+
+  .mobile-header {background-color: #ffffff;display: block;float: left;padding: 10px 20px;position: fixed;text-align: left;width: 100%;z-index:10;}
+
+  .site-navbar{z-index:10}
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{font-size: 13px !important;}
+
+  .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {padding: 14px 15px;}
+
+  .create-btn .button{padding:8px 20px;}
+
+  .login-body .mobile-header {border-bottom: 2px solid #dddddd;text-align: center;}
+
+  .login-body .main-container{top:100px; margin-top:30px;}
+
+  .login-body nav.site-navbar {display: none;}
+
+  .wrapper {overflow: hidden;}
+
+  .tab-content .button-wrp.button-submit {width:auto;}
+
+  .general-info-form .chosen-container{margin-bottom:10px !important}
+
+  .general-info .value-text{font-size:15px;}
+
+  .general-info label{font-size:12px;}
+
+  .dataTables_wrapper .dataTables_paginate span{margin-bottom:10px;}
+
+  #form_add_client .client-info .general-info-form {border-right: 0;padding-right: 0;}
+
+  #form_add_client .address-info {margin-top: 40px;padding-left: 15px;}
+
+  .edit-btn img { max-width: inherit;}
+
+  /* Notes Table */
+
+
+
+  .table.add-molding-table td.td_item{width:170px;}
+
+.table.add-molding-table td.td_mesurement, .table.add-molding-table td.td_description, .table.add-molding-table td.td_material, .table.add-molding-table td.td_soldby, .table.add-molding-table td.td_qty, .table.add-molding-table td.td_price, .table.add-molding-table td.td_total{width:175px !important;}
+
+  .table-default.attachments-table{border:1px#ddd solid;}
+
+  .table-default.attachments-table tr td{width: 100%;display: block;text-align: center;border-bottom:1px #ddd solid !important;    padding: 13px 19px;line-height: 22px;}
+
+  .table-default.attachments-table tr td p{text-align:center;}
+
+  .table-default.attachments-table button.remove{float:none;}
+
+  .table-default.attachments-table tr td:empty { display:none;}
+
+  .table-default.attachments-table .attach-item > span > a > span {white-space: nowrap;overflow: hidden;display: inline-block;}
+
+  .table-default .attach-item button.download{margin-top:0px;}
+
+  .table-default.attachments-table .attach-item > span:first-child { padding-left: 0px;}
+
+  .items-info .table.invoice-table > tbody > tr > td{    padding: 14px 10px;}
+
+  .general-info .col-md-3.col-sm-6{min-height:inherit}
+
+  #clientData .button-wrp {flex: 1 1 0;float: right !important;margin-bottom: 30px;margin-left: 10px !important; margin-top:0px !important; width:110px; clear:none;}
+
+  #clientData .button-wrp .btn {flex: inherit;width: 100%; box-sizing:border-box;}
+
+  .button-wrp{padding:0 15px}
+
+  .addNew-note{margin-bottom:10px;}
+
+  .option-wrp a, .option-wrp .opt-btn{padding:0px;}
+
+  .quoteCloseWarning .modal-header .modal-title {font-size: 15px;padding-right: 15px;}
+
+  button.remove{float:none; margin-left:15px;}
+
+  .dataTables_wrapper .dataTables_length{margin-top:15px;}
+
+  #user-details .button-wrp .btn {flex: inherit;min-width: 120px;}
+
+  .grey-popup .modal-dialog{padding:20px 15px 10px}
+
+  .modal-body #form_add_client{padding:0px}
+
+  .button-wrp .btn {min-width:inherit}
+
+  #form_add_client .address-info{margin-bottom:10px;}
+
+  .grey-popup .modal-dialog {border-width: 3px;padding: 20px 5px 10px;right: 0;width: 100%;}
+
+  #clientData .button-wrp{width:auto; padding:0px;}
+
+  .modal-open .modal.grey-popup{padding:0 5px !important}
+
+  .grey-popup .modal-content .white_box, .modal-content.white_box{border-width:2px; padding: 36px 20px;}
+
+  .grey-popup .modal-content .payment-form .form-control{border-width:1px;}
+
+  .table-main .qoute-details{clear:both;}
+
+  .grey-popup .modal-dialog .actions{text-align:center;}
+
+  .grey-popup .attach-upload-file input.classClone[type="file"], .modal-dialog .attach-upload-file.close-Button input.classClone[type="file"] {float: left;width: 88%;}
+
+  .general-info .value-text{margin-bottom:20px; min-height:inherit;}
+
+  .general-info-form .carousel.slide.address {margin: 0 auto;width: 205px;}
+
+  #billingadd {margin: 0 auto; padding-left: 0; width: 128px;}
+
+  .fold .side-menubar li span{white-space:normal;}
+
+  .grey-popup .modal-dialog, .Woodoption .modal-dialog, .constoption .modal-dialog, .Dooroption .modal-dialog, .kitchanPrintOption .modal-dialog{width:95%; padding:15px}
+
+  .modal-title{font-size:18px;}
+
+  #kitchanPrintOptionform .btn.btn-info.Pricing{width:130px; margin: 0 auto 7px}
+
+
+
+
+
+  .dynamic-tabs{margin-top:0}
+
+  
+
+  .kitchen-main .tab-content .owl-carousel{padding:30px 15px}
+
+  .modal-dialog .actions .btn{min-width: 100px;}
+
+  .table-main h4{font-size:18px;}
+
+  .modal-body{padding:0}
+
+  .general-info-form .portlet-inner #file {margin: 15px 0;}
+
+  .white_box .modal-body .btn-info, .grey-popup .btn-grey, .Woodoption .btn-grey, .constoption .btn-grey, .Dooroption .btn-grey {width: 200px; white-space: normal; margin:0 auto 10px; display:block;}
+
+  #kitchanModeOptionform .btn.btn-info.Pricing{margin: 0 0 10px !important;}  
+
+  #kitchanModeOptionform a{clear: both}
+
+  .kitchanModeOption .modal-dialog{width: calc(100% - 30px);}
+
+  .modal-open .modal.grey-popup #form_add_client .address-info .col-sm-4, .address-info .col-sm-12{padding:0 15px;}
+
+  .static-tab-content-inner{padding:20px}
+
+  .hardware-table-count .hardware-right-row{padding:0}
+
+  .kitchen-cont-wrp .hardware-right{width:100%}
+
+  .hardware-right-row .col-sm-3, .hardware-right-row .col-sm-9 {
+
+  padding: 0;
+
+}
+
+.hardware-left.col-sm-6 {
+
+  border: medium none;
+
+  padding: 0;
+
+}
+
+.kitchen-cont-wrp .inside-content.rightPart{padding: 0}
+
+.static-tab-content-inner .color-text {
+
+  width: 100%;
+
+}
+
+.chosen-container.chosen-container-single {
+
+  width: 100% !important;
+
+}
+
+.static-tab-content-inner .markup-text {
+
+  display: block;
+
+  
+
+}
+
+.static-tab-content-inner .drawer-sample > h4{display:block;margin-bottom:10px}
+
+.static-tab-content-inner .drawer-sample .sample-door {
+
+  padding: 0 5px 0 0;
+
+}
+
+.kitchen-main .kitchen-segment .nav-tabs.tabs-full > li > a{padding:7px 5px 17px 30px}
+
+.kitchanOption #kitchanOptionform .btn.btn-info{font-size:14px; margin: 0 auto 6px}
+
+.kitchanOption .modal-dialog.modal-md{margin:0 auto; width:90%}
+
+.kitchen-main .item.link{text-align: center; margin:0 auto}
+
+.kitchen-main .owl-nav .owl-prev{left:10px;}
+
+.kitchen-main .owl-nav .owl-next{right:0px;}
+
+.Woodoption .series-name, .constoption .series-name, .Dooroption .series-name{width:100%}
+
+.kitchen-main .item .addNew-note{margin:0 auto; display:block;}
+
+.kitchen-cont-wrp .tabs-full > li:first-child {padding-left: 0;}
+
+.nav-tabs > li{margin: 0 0 10px;}
+
+.static-tabs {top: 330px !important;}
+
+.static-tabs .nav-tabs > li:hover {margin-bottom: 10px;}
+
+.kitchen-cont-wrp .kitchen-main .nav.nav-tabs.tabs-full { top: -137px !important;}
+
+/*.login-body .logo-main{display:none}*/
+
+.kitchen-main .kitchen-segment .nav-tabs.tabs-full > li{text-align: center; box-shadow:none}
+
+.kitchen-segment .nav.nav-tabs.tabs-full{position:relative;}
+
+.plus-tab {
+
+  float: right;
+
+  position: absolute;
+
+  right: 0;
+
+  top: 0;
+
+  z-index: 5;
+
+}
+
+
+
+.Drawer-tab-class .static-tab-content-inner .chosen-container-single .chosen-single, .finish-text select, .Drawer-tab-class .static-tab-content-inner .chosen-container, .Drawer-tab-class .chosen-container-single .chosen-drop, .static-tab-content-inner .color-row, .static-tab-content-inner .color-text{width:100% !important}
+
+.static-tab-content-inner .color-right, .static-tab-content-inner .markup-text, .static-tab-content-inner .finish-text, .static-tab-content-inner .finish-text, .static-tab-content-parent .static-tab-content-inner .other-manual-color {
+
+margin-left:0;
+
+  width: 100%;
+
+}
+
+.btn.btn-grey {
+
+  width: auto;
+
+  display: inline-block;
+
+}
+
+.items-info .list-listing{padding:0 0 70px}
+
+.plus-icon.length-append{position:inherit;}
+
+
+
+
+
+.kitchen-cont-wrp .kitchen-main .nav.nav-tabs.tabs-full {  
+
+  border-bottom:none
+
+}
+
+
+
+.static-tabs {
+
+  float: none;
+
+  top: 265px;
+
+  position:relative;
+
+}
+
+
+
+
+
+
+
+.kitchen-cont-wrp .kitchen-main .kitchen-segment .nav.nav-tabs.tabs-full {
+
+  top: 0 !important;
+
+}
+
+
+
+.static-tab-content-inner .sub-drawer-option {
+
+  float: none;
+
+  margin: 10px 0 0 18px;
+
+  width: 100%;
+
+}
+
+
+
+
+
+.qoute-details .plus-item {
+
+  margin: 0;
+
+}
+
+.kitchen_table_main .plus-item{margin:-8px 0 0;}
+
+.Common-item .invoice-table tr th{min-width: 180px}
+
+.Common-item .invoice-table tr .descriptionTh{min-width: 260px;}
+
+.Common-item .invoice-table tr .rateTh{min-width: 175px;}
+
+.Common-item .invoice-table tr .qtyTh{min-width: 175px;}
+
+/*.Common-item .invoice-table tr th:nth-child(2), .invoice-table tr th:nth-child(3), .invoice-table tr th:nth-child(4) {
+
+  min-width: 170px !important; 
+
+}*/
+
+.Common-item .invoice-table tr .td_kitchen_total .form-control.itemTotal{ width: 110px !important;}
+
+.kitchen_table_main #btnDel .remove{ margin-top: 10px;}
+
+
+
+.dataTables_wrapper .dataTables_paginate{margin:20px 0 0}
+
+.table-wrap{margin-bottom:20px;}
+
+#kitchenView {
+
+  margin-top: 30px !important;
+
+}
+
+.modal-dialog .actions{margin-top:10px;}
+
+.Woodoption .btn-info, .Woodoption .btn-grey, .constoption .btn-info, .constoption .btn-grey, .Dooroption .btn-info, .Dooroption .btn-grey{
+
+  display: inline-block !important;
+
+  width: 100px !important;
+
+}
+
+.thead-section {
+
+  display: block;
+
+  overflow: auto;
+
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active{ font-size: 13px !important;margin: 0 0 8px; padding: 8px 15px !important;}
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button{ padding: 5px 10px;  font-size: 12px !important;}
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {font-size: 12px !important; /*padding:5px 10px !important;*/ vertical-align: top;}
+
+  #reports-chart .ct-labels .ct-horizontal{font-size:12px; padding:0 3px; line-height:18px;}
+
+  .dataTables_wrapper .dataTables_paginate .ellipsis {margin: 0;padding: 0 1em;}
+
+  .button-wrp .btn{box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box;}
+
+  .table-wrap .dataTables_wrapper .dataTables_paginate, .table-wrap .dataTables_wrapper .dataTables_length, .attributes-table .dataTables_wrapper .dataTables_paginate, .attributes-table .dataTables_wrapper .dataTables_length{ text-align: left; }
+
+  .dataTables_wrapper .dataTables_paginate span{margin:0 9px;}
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{font-size: 12px !important;/*padding:5px 10px !important;*/vertical-align:top;}
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.previous, .dataTables_wrapper .dataTables_paginate .paginate_button.next, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {font-size: 12px !important;margin: 8px 0 8px;padding:5px 10px !important;}
+
+  .table-wrap .dataTables_wrapper .dataTables_paginate, .table-wrap .dataTables_wrapper .dataTables_length, .attributes-table .dataTables_wrapper .dataTables_paginate, .attributes-table .dataTables_wrapper .dataTables_length {text-align: center;}
+
+  .dataTables_wrapper .paging_ellipses .paginate_button.previous, .dataTables_wrapper .paging_ellipses .paginate_button.next {padding: 7px !important;}
+
+  #clientModal .general-info-form .col-sm-6, #clientModal .address-info.general-info-form .col-sm-3{padding-right:15px; }
+
+  .table.invoice-table thead.sticky-thead {position: inherit;}
+
+  .invoice-review.pull-right{max-width: 100%;}
+
+  .quote-tax #taxcal > div {margin: 0 0 10px; width: 100%;}
+
+  #windowsItems .EbidClass {top: -10px; width: 100%;}
+
+    .kitchen-main .nav.nav-tabs{ padding: 0 !important;}    
+
+    .modal-dialog .item-wrapper{ width: 90%; margin: 30px auto; overflow-x: auto;}
+
+    .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{padding: 10px;}
+
+    .button-wrp {margin: 0 0 10px;}    
+
+    .modal-body .table.invoice-table tbody tr td:first-child, .modal-body .table.invoice-table thead th:first-child{ width: 50px;min-width: 50px;}  
+
+    .add-molding-table thead th{min-width: 170px;}
+
+    .add-molding-table thead th:nth-child(2), .add-molding-table thead th:nth-child(3){min-width: 155px;}    
+
+    .add-molding-table thead th:nth-child(4){min-width: 150px;}
+
+    .add-molding-table thead th:nth-child(6){min-width: 150px;}
+
+    .add-molding-table thead th:nth-child(7){min-width: 183px;}
+
+    .add-molding-table thead th:nth-child(8){min-width: 150px;}            
+
+    
+
+    #windowsItems table, #newChoice table{display: block !important; overflow: auto; width: 100%;}
+
+    #windowsItems .form-control.itemTotal {width: 60px;}
+
+    .otherClass-table .other-itemName input{width: 88px !important;}
+
+    .otherClass-table .other-description textarea{width: 180px !important;}    
+
+    
+
+    .Common-item .itemothertbody textarea.form-control.itemDescription, .other-description {width: 240px;}
+
+    .table.invoice-table .sticky-thead th.th-other-qty{width: auto;}
+
+    .sendEmailModal.grey-popup .modal-dialog {width: calc(100% - 30px) !important;}
+
+    #clientModal .general-info-form .col-sm-4:nth-child(3) {padding: 0 15px;width: 100%;}
+
+    .segment-tab-content table{width: auto !important;}
+
+    .side-menubar {height: initial;top: 138px;bottom: 0;}
+
+    .bootbox-confirm.in .bootbox-body {padding: 10px 15px;}
+
+    .bootbox-confirm.in .bootbox-close-button{margin: 10px !important; }
+
+    .kitchanModeOption .btn-info.Pricing{left: 0 !important; right: 0 !important; margin: 0 auto; display: inline-block; width: 100%;}
+
+    .option-wrp .notification {margin: -2px 0 0 -2px;}
+
+    .table.invoice-table{display: block;overflow: auto;}
+
+    .dropzone.form-horizontal .LeadIntrest-block {display: inline-block;}
+
+    #form_add_lead .client-info .general-info-form {border-right: 0 none; padding-right: 0;}
+
+    .qoute-details .add-molding-table .moldingtbody .status-item .ms-ctn{width: 100% !important;}
+
+    .table.add-molding-table.invoice-table textarea.form-control {width: 250px !important;}
+
+    .table.invoice-table.other-class-onview td {white-space: normal;}
+
+    .table.invoice-table.other-class-onview tbody td:nth-child(1) {width: 10%;}
+
+    .table.invoice-table.other-class-onview tbody td:nth-child(2) {width: 60%;}
+
+    .table.invoice-table.other-class-onview tbody td:nth-child(3) {width: 10%;}
+
+    .table.invoice-table.other-class-onview tbody td:nth-child(4) {width: 10%;}
+
+    .table.invoice-table.other-class-onview tbody td:nth-child(5) {width: 10%;}
+
+    .invoice-review-table td:nth-child(2n+2) {width: 23%;}
+
+    .table.invoice-table.item-other-class td .remove{float: left;}
+
+    
+
+     /* By mansi */
+
+    .kitchen-detail-view .colm-option {margin: 0 0 0 10px;}
+
+    .create-btn #bulk_action_selection{    flex: 0 0 43%;}
+    .create-btn .button{max-width: 27%;flex: 0 0 27%;}
+
+    .login-body .table-main>.row{height: auto;}
+
+    .shipping-wrap .panel-title a{font-size: 16px;}
+    .shipping-title h2{font-size: 22px;}
+    .price-chart .label{font-size: 12px;}
+    .price-chart .s-price{    font-size: 12px;    padding: 0 3px;}
+
+}
+
+@media screen and (min-width:480px) and (max-width: 767px){
+
+  .button-wrp .btn{flex:inherit;} 
+
+  .button-wrp {clear: both;display: block;float: none !important;text-align: center;}
+
+  .dataTables_wrapper .dataTables_length {float: none;/* width: 100%; */max-width: 200px;margin:20px auto 0; display: block;}
+
+  .dataTables_wrapper .paging_ellipses .paginate_button.previous, .dataTables_wrapper .paging_ellipses .paginate_button.next {padding: 7px !important;}
+
+  
+
+}
+
+
+
+
+
+@media screen and (max-width:480px){
+
+    
+
+    .modal-dialog .item-wrapper{ width: 300px;}
+
+    .login-body .login-box .button-wrp{padding-left: 0;padding-right: 0;}
+    .price-chart table{table-layout: fixed;}
+    .price-chart .label{margin-left: 10px;}
+    .price-chart table tr {
+    display: flex;
+    flex-wrap: wrap;
+}
+.price-chart .label {
+    font-size: 12px;
+    flex: 0 0 46%;
+    max-width: 46%;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-left: 0;
+}
+.price-chart .s-price {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+.price-chart .price-action{width: auto;}
+.price-chart table{
+ margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px !important;
+    display: block;
+    }
+    .price-chart table:last-child {
+    border-bottom: 0;
+}
+.shipping-wrap .edit-zone{
+      width: 20px;
+    height: 20px;
+        line-height: 20px;
+}
+.shipping-wrap .edit-zone i{font-size: 14px;}
+.shipping-wrap .panel-title .accordion-toggle.collapsed:after, .shipping-wrap .panel-title .accordion-toggle:after{top: 5px;}
+}
