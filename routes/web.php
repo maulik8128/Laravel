@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +31,7 @@ Route::get('/category/getCategory',[CategoryController::class,'getCategory'])->n
 Route::get('/category/ajaxview',[CategoryController::class,'ajaxview'])->name('Category.ajaxview');
 
 Route::resource('category', CategoryController::class);
+Route::resource('posts', PostController::class);
+Route::resource('posts.comment', CommentController::class);
+Route::resource('product', ProductController::class)->middleware('auth');
+

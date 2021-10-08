@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-// use NunoMaduro\Collision\Adapters\Phpunit\State;
+use NunoMaduro\Collision\Adapters\Phpunit\State;
 
 class Category extends Model
 {

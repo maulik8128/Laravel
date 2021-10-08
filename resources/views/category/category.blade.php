@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('css')
+@section('assets')
 {{-- <link rel="stylesheet" href="{{ asset('assets/css/jquery.dataTables.min.css') }}"> --}}
 {{-- <script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script> --}}
 <link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
@@ -21,11 +21,14 @@
                     {{ session('status') }}
                </div>
         @endif
+        <div class="col-3">
+            <a href="{{ route('category.create') }}" class="btn btn-primary" >Add</a>
+        </div>
         <div class="page">
             <div class="container-fluid">
-                    {{-- {!! $dataTable->table() !!} --}}
+                    {!! $dataTable->table() !!}
 
-                    <table class="table table-bordered yajra-datatable">
+                    {{-- <table class="table table-bordered yajra-datatable">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -36,36 +39,40 @@
                         </thead>
                         <tbody>
                         </tbody>
-                    </table>
+                    </table> --}}
                 </div>
             </div>
         </div>
 
     </div>
 </div>
-{{-- {!! $dataTable->scripts() !!} --}}
-
+{!! $dataTable->scripts() !!}
 <script type="text/javascript">
-    $(function () {
 
-      var table = $('.yajra-datatable').DataTable({
-          processing: true,
-          serverSide: true,
-          ajax: "{{ route('Category.ajaxview') }}",
-          columns: [
-              {data: 'id', name: 'id'},
-              {data: 'title', name: 'title'},
-              {data: 'parent', name: 'cat.title'},
-              {
-                  data: 'action',
-                  name: 'action',
-                  orderable: true,
-                  searchable: true
-              },
-          ]
-      });
+$('#category-table').on('click','.delete',function(e){
+    // if(!confirm("Do you really want to do this?")) {
+    //    return false;
+    //  }
+    e.preventDefault();
 
+    var url = e.target;
+
+    var id = $(this).data('delete');
+
+    var token = $("meta[name='csrf-token']").attr("content");
+
+    $.ajax({
+
+        url:url,
+        data:{"_token":token,"id":id},
+        type:'DELETE',
+        success: function(data){
+            console.log(data);
+            $('#category-table').DataTable().ajax.reload();
+        }
     });
+
+});
 </script>
 
 @endsection

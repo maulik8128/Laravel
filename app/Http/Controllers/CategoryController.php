@@ -67,10 +67,7 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
 
-        //   dd($collection);
-        dump(Route::current() );
-        dump(Route::currentRouteName());
-        dump(Route::currentRouteAction());
+
     }
 
     /**
@@ -79,11 +76,12 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
-    }
+        $category =Category::findOrFail($id);
 
+        return view('category.edit',['category'=>$category]);
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -91,9 +89,18 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(StoreCategoy $request, $id)
     {
-        //
+
+        $category = Category::findOrFail($id);
+
+        $category->title = $request->input('title');
+
+        $category->parent_id = $request->input('parent_id');
+
+        $category->save();
+
+        return redirect()->route('category.index')->withStatus("Category updated Successfull");
     }
 
     /**
@@ -102,37 +109,38 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Category $category, Request $request)
     {
-        dd($category);
+       $category1 = Category::findOrFail($request->id);
+       $category1->delete();
+       session()->flash('status', 'Category was delete!');
+       return true;
     }
     public function getCategory()
     {
-        // $category = collect(Category::get_category());
-        $category = collect(Category::where('parent_id','=',null)->select('id','title AS text')->with('children:id,title AS text,parent_id')->get());
-        // $category = collect(Category::select('categories.id','categories.title','categories.parent_id','cat.title AS Cat')->leftJoin('categories AS cat','cat.id','=','categories.parent_id')->get());
-
-        return $category  = $category;
+        $category = collect(Category::get_category());
+        // $category = collect(Category::where('parent_id','=',null)->select('id','title AS text')->with('children:id,title AS text,parent_id')->get());
+        return $category=$category;
     }
 
     public function ajaxview(Request $request)
     {
         // if ($request->ajax()) {
-            $data = Category::query()
-            ->select('categories.id','categories.title','categories.parent_id','cat.title AS parent')
-            ->leftJoin('categories AS cat','cat.id','=','categories.parent_id');
-            return DataTables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function($row){
-                    $btn = '<a href="' .route('category.edit',['category'=>$row->id]).'" class="btn btn-primary">Edit</a>';
-                    $btn = $btn.'<form action="' .route('category.destroy',['category'=>$row->id]).'" method="DELETE">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <input type="submit" value="Delete">
-                    </form> ';
-                    return $btn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
+            // $data = Category::query()
+            // ->select('categories.id','categories.title','categories.parent_id','cat.title AS parent')
+            // ->leftJoin('categories AS cat','cat.id','=','categories.parent_id');
+            // return DataTables::of($data)
+            //     ->addIndexColumn()
+            //     ->addColumn('action', function($row){
+            //         $btn = '<a href="' .route('category.edit',['category'=>$row->id]).'" class="btn btn-primary">Edit</a>';
+            //         $btn = $btn.'<form action="' .route('category.destroy',['category'=>$row->id]).'" method="DELETE">
+            //         <input type="hidden" name="_method" value="DELETE">
+            //         <input type="submit" value="Delete">
+            //         </form> ';
+            //         return $btn;
+            //     })
+            //     ->rawColumns(['action'])
+            //     ->make(true);
         // }
     }
 

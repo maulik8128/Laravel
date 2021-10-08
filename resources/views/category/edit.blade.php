@@ -2,7 +2,7 @@
 @section('assets')
 <link rel="stylesheet" href="{{ asset('assets/plugins/jquery-easyui/easyui.css') }}">
 @endsection
-@section('title', 'Add Category')
+@section('title', 'Edit Category')
 @section('content')
 
 <div class="row">
@@ -12,11 +12,12 @@
                     {{ session('status') }}
                </div>
         @endif
-        <form action="{{ route('category.store') }}" method="POST">
+        <form action="{{ route('category.update',['category'=>$category->id]) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="form-group" >
                 <label for="category">Category</label>
-                <input type="text" name="title" id="title" class="form-control" value="{{ old('title', optional($category ?? null)->name) }}">
+                <input type="text" name="title" id="title" class="form-control" value="{{ old('title', optional($category ?? null)->title) }}">
                 @error('title')
                         <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

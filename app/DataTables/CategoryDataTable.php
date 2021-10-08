@@ -30,13 +30,17 @@ class CategoryDataTable extends DataTable
             ->addColumn('action', function($row){
 
                 $btn = '<a href="' .route('category.edit',['category'=>$row->id]).'" class="btn btn-primary">Edit</a>';
-                $btn = $btn.'<form action="' .route('category.destroy',['category'=>$row->id]).'" method="DELETE">
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" value="DELETE!">
-                </form> ';
+                $btn = $btn.'<a href="' .route('category.destroy',['category'=>$row->id]).'" data-delete="'.$row->id.'" class="delete btn btn-danger  ">Delete!</a> ';
 
                  return $btn;
-         });
+         })
+         ->addColumn('#', function($row){
+
+            $btn1 = '<input type="checkbox"  data-ids="'.$row->id.'" >';
+
+
+             return $btn1;
+     });
 
 
     }
@@ -95,6 +99,7 @@ class CategoryDataTable extends DataTable
             // ->printable(true)
             // ->width(60)
             // ->addClass('text-center'),
+            '#',
             [ 'data' => 'id', 'name' => 'categories.id', 'title' => 'ID' ],
             [ 'data' => 'title', 'name' => 'categories.title', 'title' => 'Title'],
             [ 'data' => 'parent', 'name' => 'cat.title', 'title' => 'Parent' ],
