@@ -6,7 +6,6 @@ $('form').each(function(index, element) {
     // "isautovalid" class in exist in form' class
     if(clsname.indexOf('isautovalid') != -1){
       var frmID = element.id;
-      console.log(frmID);
       $("#"+frmID).validate({
           ignore: [],
           errorPlacement: function(error, element)

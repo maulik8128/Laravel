@@ -12,7 +12,7 @@
                     {{ session('status') }}
                </div>
         @endif
-        <form action="{{ route('category.store') }}" class="isautovalid" method="POST">
+        <form action="{{ route('category.store') }}" class="isautovalid" id="add_category" method="POST">
             @csrf
             <div class="form-group" >
                 <label for="category">Category</label>

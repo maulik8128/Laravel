@@ -12,12 +12,12 @@
                     {{ session('status') }}
                </div>
         @endif
-        <form action="{{ route('category.update',['category'=>$category->id]) }}" method="POST">
+        <form action="{{ route('category.update',['category'=>$category->id]) }}"  class="isautovalid" id="edit_category" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group" >
                 <label for="category">Category</label>
-                <input type="text" name="title" id="title" class="form-control" value="{{ old('title', optional($category ?? null)->title) }}">
+                <input type="text" name="title" id="title" class="form-control required" value="{{ old('title', optional($category ?? null)->title) }}">
                 @error('title')
                         <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -31,7 +31,7 @@
 
             </div>
             <div class="form-group" >
-                <input type="submit" name="submit" id="submit" class="form-control btn btn-primary">
+                <button type="submit" name="submit_page" id="submit_page" value="Submit" class="btn btn-primary label-info">Submit</button>
             </div>
         </form>
     </div>

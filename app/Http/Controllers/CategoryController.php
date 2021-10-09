@@ -118,9 +118,11 @@ class CategoryController extends Controller
     }
     public function getCategory()
     {
-        $category = collect(Category::get_category());
-        // $category = collect(Category::where('parent_id','=',null)->select('id','title AS text')->with('children:id,title AS text,parent_id')->get());
-        return $category=$category;
+        // $category = collect(Category::get_category());
+        $category = collect(Category::where('parent_id','=',null)->select('id','title AS text')->with('children:id,title AS text,parent_id')->get());
+        // $category = collect(Category::select('categories.id','categories.title','categories.parent_id','cat.title AS Cat')->leftJoin('categories AS cat','cat.id','=','categories.parent_id')->get());
+
+        return $category  = $category;
     }
 
     public function ajaxview(Request $request)
