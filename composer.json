@@ -12,19 +12,16 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
-        "rap2hpoutre/fast-excel": "^3.0",
-        "yajra/laravel-datatables": "^1.5",
-        "yajra/laravel-datatables-buttons": "^4.13"
+        "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
-        "beyondcode/laravel-query-detector": "^1.5",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.2",
-        "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^5.10",
+        "phpunit/phpunit": "^9.5.8"
     },
     "autoload": {
         "psr-4": {

@@ -88,6 +88,15 @@ composer require dyrynda/laravel-cascade-soft-deletes
 
 https://www.cloudways.com/blog/best-laravel-packages/
 
+install breeze
+ composer require laravel/breeze --dev
+
+  php artisan breeze:install
+  npm install
+  npm run development
+
+php artisan migrate
+
 https://learninglaravel.net/cheatsheet/
 
 
