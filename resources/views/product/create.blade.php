@@ -1,10 +1,10 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('title','Create Product')
 
 @section('content')
 <div class="col-6">
-    <form action="{{ route('product.store') }}" method="POST" id="form_add_product" enctype="multipart/form-data">
+    <form action="{{ route('product.store') }}" class="isautovalid" method="POST" id="form_add_product" enctype="multipart/form-data">
 
         @csrf
         @include('product.form')
@@ -13,4 +13,4 @@
 
     </form>
 </div>
-@endsection
+@endsection --}}

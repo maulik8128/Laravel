@@ -29,7 +29,7 @@
         </div>
         <div id="form_view">
             <h2>Add Product</h2>
-            <form action="{{ route('product.store') }}" method="POST" id="form_add_product" enctype="multipart/form-data">
+            <form action="{{ route('product.store') }}" method="POST" class="isautovalid" id="form_add_product" enctype="multipart/form-data">
 
                 @csrf
                 @include('product.form')
@@ -73,36 +73,38 @@
                 //ADD product
                 $('#form_add_product').on('submit', function(e){
                     e.preventDefault();
-                    var form = this;
-
-                    $.ajax({
-                        method:$(form).attr('method'),
-                        dataType:"json",
-                        url:$(form).attr('action'),
-                        data:new FormData(form),
-                        processData:false,
-                        dataType:'json',
-                        contentType:false,
-                        beforeSend:function(){
-                                $(form).find('span.error-text').text('');
-                        },
-                        success: function(data)
-                        {
-                            console.log(data);
-                            if(data.code == 0){
-                                $.each(data.error, function(prefix, val){
-                                    $(form).find('span.'+prefix+'_error').text(val[0]);
-                                });
-                            }else{
-                                $(form)[0].reset();
-                                $('#products-table').DataTable().ajax.reload(null, false);
-                                toastr.success(data.msg);
+                    if($(this).valid()){
+                        var form = this;
+                        $.ajax({
+                            method:$(form).attr('method'),
+                            dataType:"json",
+                            url:$(form).attr('action'),
+                            data:new FormData(form),
+                            processData:false,
+                            dataType:'json',
+                            contentType:false,
+                            beforeSend:function(){
+                                    $(form).find('span.error-text').text('');
+                            },
+                            success: function(data)
+                            {
+                                console.log(data);
+                                if(data.code == 0){
+                                    $.each(data.error, function(prefix, val){
+                                        $(form).find('span.'+prefix+'_error').text(val[0]);
+                                    });
+                                }else{
+                                    $(form)[0].reset();
+                                    $('#products-table').DataTable().ajax.reload(null, false);
+                                    toastr.success(data.msg);
+                                }
+                            },
+                            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                alert(errorThrown);
                             }
-                        },
-                        error: function(XMLHttpRequest, textStatus, errorThrown) {
-                            alert(errorThrown);
-                        }
-                    });
+                        });
+
+                    }
 
                 });
             };

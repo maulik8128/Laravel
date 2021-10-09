@@ -1,6 +1,6 @@
 <div class="form-group">
     <label for="product_name">Product Name</label>
-    <input id="product_name" type="text" name="product_name" class="form-control"  value="{{ old('product_name', optional($product ?? null)->product_name) }}" >
+    <input id="product_name" type="text" name="product_name" class="form-control required required"  value="{{ old('product_name', optional($product ?? null)->product_name) }}" >
     <span class="text-danger error-text  product_name_error"></span>
 </div>
 @error('product_name')
@@ -8,7 +8,7 @@
 @enderror
 <div class="form-group">
     <label for="product_description">Product Description</label>
-    <textarea id="product_description" name="product_description" class="form-control"cols="30" rows="2">{{ old('product_description', optional($product ?? null)->product_description) }}</textarea>
+    <textarea id="product_description" name="product_description" class="form-control required"cols="30" rows="2">{{ old('product_description', optional($product ?? null)->product_description) }}</textarea>
     <span class="text-danger error-text  product_description_error"></span>
 </div>
 @error('product_description')
@@ -16,7 +16,7 @@
 @enderror
 <div class="form-group">
     <label for="product_price">Product Price</label>
-    <input id="product_price" type="text" name="product_price" class="form-control"  value="{{ old('product_price', optional($product ?? null)->product_price) }}" >
+    <input id="product_price" type="text" name="product_price" class="form-control required"  value="{{ old('product_price', optional($product ?? null)->product_price) }}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
     <span class="text-danger error-text product_price_error"></span>
 </div>
 @error('product_price')
@@ -24,7 +24,7 @@
 @enderror
 <div class="form-group">
     <label for="product_photo">Product Photo</label>
-    <input id="product_photo" type="file" name="product_photo" class="form-control-file">
+    <input id="product_photo" type="file" name="product_photo" class="form-control-file" accept='image/*'>
     <span class="text-danger error-text  product_photo_error"></span>
     <div class="img-holder"></div>
 </div>
@@ -33,9 +33,10 @@
 @enderror
 <div class="form-group">
     <label for="opening_stock">Opening Stock</label>
-    <input id="opening_stock" type="text" name="opening_stock" class="form-control"  value="{{ old('opening_stock', optional($product->productStock ?? null)->opening_stock) }}" >
+    <input id="opening_stock" type="text" name="opening_stock" class="form-control required"  value="{{ old('opening_stock', optional($product->productStock ?? null)->opening_stock) }}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
     <span class="text-danger error-text  opening_stock_error"></span>
 </div>
 @error('opening_stock')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
+

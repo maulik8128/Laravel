@@ -10,7 +10,7 @@
 <script src="/vendor/datatables/buttons.server-side.js"></script>
 
 
-@endsection
+{{-- @endsection
 @section('title', 'Posts')
 @section('content')
 
@@ -37,6 +37,6 @@
 <script type="text/javascript">
 {!! $dataTable->scripts() !!}
 
-</script>
+</script> --}}
 
 @endsection

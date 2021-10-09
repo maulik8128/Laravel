@@ -82,4 +82,9 @@
         </main>
     </div>
 </body>
+<footer>
+    <script src="{{ asset('assets/plugins/jquery-validation/js/jquery.validate.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery-validation/js/additional-methods.min.js') }}"></script>
+    <script src="{{ asset('assets/js/admin_validation.js') }}"></script>
+</footer>
 </html>

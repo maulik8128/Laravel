@@ -9,11 +9,11 @@
                     {{ session('status') }}
                </div>
         @endif
-        <form action="{{ route('posts.store') }}" method="POST">
+        <form action="{{ route('posts.store') }}" class="isautovalid"  method="POST">
             @csrf
             <div class="form-group" >
                 <label for="title">Title</label>
-                <input type="text" name="title" id="title" class="form-control" value="{{ old('title', optional($post ?? null)->name) }}">
+                <input type="text" name="title" id="title" class="form-control" value="{{ old('title', optional($post ?? null)->name) }}" required>
                 @error('title')
                         <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

@@ -5,7 +5,7 @@
 {{-- @section('content') --}}
 
     <h2>Edit Product</h2>
-    <form action="{{ route('product.update',['product'=>$product->id]) }}" method="POST" id="form_add_product" enctype="multipart/form-data">
+    <form action="{{ route('product.update',['product'=>$product->id]) }}" class="isautovalid"  method="POST" id="form_add_product" enctype="multipart/form-data">
 
         @csrf
         @method('PUT')
