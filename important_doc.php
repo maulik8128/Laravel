@@ -1,6 +1,7 @@
 /*
 *
 <!-- laravel install -->
+composer create-project laravel/laravel your-project-name version
 composer global require laravel/installer
 laravel new example-app
 
@@ -276,6 +277,9 @@ php artisan session:table
 php artisan vendor:publish [--force] [--provider[="..."]] [--tag[="..."]]
 php artisan tail [--path[="..."]] [--lines[="..."]] [connection]
 
+
+payment gatway
+https://test.instamojo.com/
 
 
 */

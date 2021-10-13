@@ -40,7 +40,7 @@ class ProductsDataTable extends DataTable
      */
     public function query(Product $model)
     {
-        // $model = Product::with('productStock');
+        // $model = Product::with('product_stock');
         // return $model->newQuery();
         $data = Product::query()
         ->select('products.id','products.product_name','products.product_description','products.product_price','product_stocks.opening_stock')

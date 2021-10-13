@@ -20,7 +20,6 @@ class CategoryController extends Controller
      */
     public function index(CategoryDataTable $dataTable)
     {
-
         return $dataTable->render('category.category');
 
     }
@@ -111,8 +110,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category, Request $request)
     {
-       $category1 = Category::findOrFail($request->id);
-       $category1->delete();
+       $category1 = Category::findOrFail($request->id)->delete();
        session()->flash('status', 'Category was delete!');
        return true;
     }
