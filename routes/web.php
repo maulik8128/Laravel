@@ -20,6 +20,76 @@ use App\Http\Controllers\RazorpayController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/posts/{id}',function($id){
+//     return 'post'.$id;
+// })->where(['id'=>'[0-9]+'])->name('home.posts');
+// $posts=[
+//         1 =>[
+//             'title'=>'test1',
+//             'contact' => 'contact1',
+//             'is_new' => true,
+//             'has_comments' => true
+//         ],
+//         2 =>[
+//             'title'=>'test2',
+//             'contact' => 'contact2',
+//             'is_new' => false
+//         ],
+
+// ];
+
+// Route::get('/posts',function() use($posts) {
+//     return view('posts.index',['posts'=> $posts]);
+// });
+
+// Route::get('/post-show/{id}',function($id) use($posts) {
+
+//     abort_if(!isset($posts[$id]),404);
+
+//     return view('posts.show',['posts'=>$posts[$id]]);
+
+// })->name('post.show');
+
+// Route::get('/fun/response', function() use($posts){
+//     return response($posts, 201)
+//     ->header('Content-Type', 'application/json')
+//     ->cookie('MY_COOKIE','MAULIK',3600);
+// });
+
+// Route::get('/fun/redirect', function(){
+//     return redirect('/contact');
+// });
+
+// Route::get('/fun/back', function(){
+//     return back();
+// });
+
+// Route::get('/fun/name-route', function(){
+//     return redirect()->route('post.show',['id' => 1]);
+// });
+
+// Route::get('/fun/away', function(){
+//     return redirect()->away('http://google.co.in');
+// });
+
+// Route::get('/fun/json', function() use($posts){
+//     return response()->json($posts);
+// });
+
+// Route::prefix('/fun')->name('fun.')->group(function(){
+//     // remove /fun prefix below route
+//     Route::get('/download', function(){
+//         return response()->download(public_path('/path'),'face.jpg');
+//     })->name('download');
+// });
+
+// Route::get('/query',function() use($posts) {
+//     // dd(request()->all());
+//     // dd((int)request()->input('page',10));
+//     dd((int)request()->query('page',10));
+
+// });
+// Route::get('/single', AboutController::class);
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,7 +105,7 @@ Route::get('/category/ajaxview',[CategoryController::class,'ajaxview'])->name('C
 
 Route::resource('category', CategoryController::class)->middleware('auth');
 Route::resource('posts', PostController::class);
-Route::resource('posts.comment', CommentController::class);
+Route::resource('posts.comment', CommentController::class)->middleware('auth');
 Route::resource('product', ProductController::class)->middleware('auth');
 
 Route::get('/location',[LocationController::class,'index'])->name('location');
@@ -49,3 +119,8 @@ Route::get('/payment/redirect',[Payment::class,'redirect'])->name('payment.redir
 
 Route::get('razorpay', [RazorpayController::class, 'razorpay'])->name('razorpay');
 Route::post('razorpaypayment', [RazorpayController::class, 'payment'])->name('payment');
+
+Route::get('mailable', function(){
+    $comment = App\Models\Comment::find(1);
+    return new App\Mail\CommentPosted($comment);
+});

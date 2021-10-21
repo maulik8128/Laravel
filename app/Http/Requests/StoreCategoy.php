@@ -27,4 +27,8 @@ class StoreCategoy extends FormRequest
             'title' => 'required|min:3|max:100'
         ];
     }
+    public function messages()
+    {
+        return ['title.required' => 'Category title required'];
+    }
 }
