@@ -23,7 +23,18 @@ class CategoryFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(1),
-            'parent_id'=>$this->faker->numberBetween(0,50),
+            'status' => TRUE,
         ];
+    }
+
+    //blow state override
+    public function parentCategory()
+    {
+        return $this->state(function(array $attributes){
+            return [
+                'title' => $this->faker->sentence(1),
+                'parent_id'=>null,
+            ];
+        });
     }
 }

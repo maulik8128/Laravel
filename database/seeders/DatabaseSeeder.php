@@ -13,7 +13,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         // \App\Models\User::factory(10)->create();
-        \App\Models\Category::factory(100)->create();
+
+        if($this->command->confirm('Do you want to refresh tha database?')){
+            $this->command->call('migrate:refresh');
+            $this->command->info('Database was refreshed');
+        }
+        $this->call([
+            UsersSeeder::class,
+            PostSeeder::class,
+            CommentSeeder::class,
+            CategorySeeder::class
+
+            ////composer dump-autoload
+        ]);
+
     }
 }

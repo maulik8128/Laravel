@@ -44,4 +44,16 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    //blow state override
+
+    public function newUser()
+    {
+        return $this->state(function(array $attributes){
+            return [
+                'name' => 'Test',
+                'email' => 'test@gmail.com',
+            ];
+        });
+    }
 }

@@ -13,6 +13,11 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users =\App\Models\User::all();
+
+        \App\Models\Post::factory(50)->make()->each(function($post) use($users){
+            $post->user_id = $users->random()->id;
+            $post->save();
+        });
     }
 }
