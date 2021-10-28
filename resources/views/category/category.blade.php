@@ -1,14 +1,8 @@
 @extends('layouts.app')
 @section('assets')
-{{-- <link rel="stylesheet" href="{{ asset('assets/css/jquery.dataTables.min.css') }}"> --}}
-{{-- <script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script> --}}
-<link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
-<script src="http://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
-<script src="/vendor/datatables/buttons.server-side.js"></script>
-
+<link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/jquery.dataTables.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/responsive.dataTables.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/buttons.dataTables.min.css') }}">
 
 @endsection
 @section('title', 'Category')
@@ -47,6 +41,10 @@
     </div>
 </div>
 {!! $dataTable->scripts() !!}
+<script src="{{ asset('assets/datatable-1.11.3/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/datatable-1.11.3/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('assets/datatable-1.11.3/js/dataTables.buttons.min.js') }}"></script>
+<script src="/vendor/datatables/buttons.server-side.js"></script>
 <script type="text/javascript">
 
 $('#category-table').on('click','.delete',function(e){
@@ -71,7 +69,6 @@ $('#category-table').on('click','.delete',function(e){
             $('#category-table').DataTable().ajax.reload();
         }
     });
-
 });
 </script>
 

@@ -33,14 +33,7 @@ class CategoryDataTable extends DataTable
                 $btn = $btn.'<a href="' .route('category.destroy',['category'=>$row->id]).'" data-delete="'.$row->id.'" class="delete btn btn-danger  ">Delete!</a> ';
 
                  return $btn;
-         })
-         ->addColumn('#', function($row){
-
-            $btn1 = '<input type="checkbox"  data-ids="'.$row->id.'" >';
-
-
-             return $btn1;
-     });
+         });
 
 
     }
@@ -99,7 +92,7 @@ class CategoryDataTable extends DataTable
             // ->printable(true)
             // ->width(60)
             // ->addClass('text-center'),
-            '#',
+            // '#',
             [ 'data' => 'id', 'name' => 'categories.id', 'title' => 'ID' ],
             [ 'data' => 'title', 'name' => 'categories.title', 'title' => 'Title'],
             [ 'data' => 'parent', 'name' => 'cat.title', 'title' => 'Parent' ],

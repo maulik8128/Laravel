@@ -1,30 +1,23 @@
 @extends('layouts.app')
 @section('assets')
+<link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/jquery.dataTables.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/responsive.dataTables.min.css') }}">
+{{-- <link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/buttons.dataTables.min.css') }}"> --}}
 
-<link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
-{{-- <link rel="stylesheet" href="{{ asset('assets/datatable/css/dataTables.bootstrap.min.css') }}"> --}}
-<link rel="stylesheet" href="{{ asset('assets/sweetalert2/sweetalert2.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/toastr/toastr.min.css') }}">
-<script src="{{ asset('assets/jquery/jquery-3.6.0.min.js') }}"></script>
 
-<link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
-<script src="http://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
-{{-- <script src="/vendor/datatables/buttons.server-side.js"></script> --}}
 
 @endsection
 @section('title', 'Product')
 @section('content')
 
 <div class="row">
-    <div class="col-4" >
+    <div class="col-sm-4" >
         @if (session('status'))
             <div class="alert alert-success" role="alert">
                     {{ session('status') }}
             </div>
         @endif
-        <div class="col-3">
+        <div class="col-sm-3">
             {{--  <a href="{{ route('product.create') }}" class="btn btn-primary" >Add Product </a>  --}}
         </div>
         <div id="form_view">
@@ -40,9 +33,21 @@
         </div>
     </div>
 
-    <div class="col-8">
+    <div class="col-sm-8">
         <div class="page">
             <div class="container-fluid">
+                <div id="search_form">
+                    <form action="#" method="POST" id="search">
+                        @csrf
+                        <label for="product_name_search">Product Name</label>
+                        <input type="text" name="product_name_search" id="product_name_search">
+                        <label for="product_price_search">Product Price</label>
+                        <input type="text" name="product_price_search" id="product_price_search">
+                        <input type="button" value="Search" id="search" class="btn btn-primary">
+                        <input type="button" value="Reset" id="reset" class="btn btn-primary">
+                    </form>
+                </div>
+
                     {!! $dataTable->table() !!}
 
             </div>
@@ -51,12 +56,8 @@
 
 </div>
 {!! $dataTable->scripts() !!}
-{{-- <script src="{{ asset('assets/bootstrap/js/bootstrap.js') }}"></script> --}}
-{{-- <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.js') }}"></script> --}}
-{{-- <script src="{{ asset('assets/datatable/js/dataTables.dataTables.min.js') }}"></script> --}}
-<script src="{{ asset('assets/sweetalert2/sweetalert2.min.js') }}"></script>
-<script src="{{ asset('assets/toastr/toastr.min.js') }}"></script>
-{{-- <script src="{{ asset('assets/toastr/toastr.js.map') }}"></script> --}}
+<script src="{{ asset('assets/datatable-1.11.3/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/datatable-1.11.3/js/dataTables.responsive.min.js') }}"></script>
 <script type="text/javascript">
  toastr.options.preventDuplicates = true;
 
@@ -66,7 +67,7 @@
      }
 
  });
-
+ const table=$("#products-table");
     $(function(){
             AddEdit();
             function AddEdit(){
@@ -88,13 +89,15 @@
                             },
                             success: function(data)
                             {
-                                console.log(data);
+
                                 if(data.code == 0){
                                     $.each(data.error, function(prefix, val){
                                         $(form).find('span.'+prefix+'_error').text(val[0]);
                                     });
                                 }else{
+                                    // $(form).trigger('reset');
                                     $(form)[0].reset();
+                                    imagPreviewClear();
                                     $('#products-table').DataTable().ajax.reload(null, false);
                                     toastr.success(data.msg);
                                 }
@@ -109,30 +112,51 @@
                 });
             };
 
-        $("#products-table").on('click','.edit-product',function(e){
-            e.preventDefault();
-            var url = e.target;
-            var id = $(this).data('edit');
-            var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                type:'GET',
-                url:url,
-                data:{"_token":token,"id":id},
-                beforeSend:function(){
+            table.on('click','.edit-product',function(e){
+                e.preventDefault();
+                var url = $(this).attr('href');
+                var id = $(this).data('edit');
+                var token = $("meta[name='csrf-token']").attr("content");
+                $.ajax({
+                    type:'GET',
+                    url:url,
+                    data:{"_token":token,"id":id},
+                    beforeSend:function(){
 
-                },
-                success: function(data)
-                {
-                    $("#form_view").empty().append(data);
-                    AddEdit();
-                    console.log(data);
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    alert(errorThrown);
-                }
+                    },
+                    success: function(data)
+                    {
+                        $("#form_view").empty().append(data);
+                        AddEdit();
+                        captcha();
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        alert(errorThrown);
+                    }
+                });
+
             });
 
-        });
+            // delete record
+            table.on('click','.delete-product', function(e){
+                e.preventDefault();
+                var url= $(this).attr('href');
+                var id = $(this).data('delete');
+                var token = $("meta[name='csrf-token']").attr("content");
+
+                $.ajax({
+                    type:'DELETE',
+                    url:url,
+                    data:{"_token":token,"id":id},
+                    success: function(data){
+                        table.DataTable().ajax.reload();
+                    },
+                    error:function(errorThrown){
+                        alert(errorThrown);
+                    }
+                });
+
+            });
 
             //Reset input file
             $('input[type="file"][name="product_photo"]').val('');
@@ -143,23 +167,93 @@
                 var extension = img_path.substring(img_path.lastIndexOf('.')+1).toLowerCase();
 
                 if(extension == 'jpeg' || extension == 'jpg' || extension == 'png'){
-                     if(typeof(FileReader) != 'undefined'){
-                          img_holder.empty();
-                          var reader = new FileReader();
-                          reader.onload = function(e){
-                              $('<img/>',{'src':e.target.result,'class':'img-fluid','style':'max-width:100px;margin-bottom:10px;'}).appendTo(img_holder);
-                          }
-                          img_holder.show();
-                          reader.readAsDataURL($(this)[0].files[0]);
-                     }else{
-                         $(img_holder).html('This browser does not support FileReader');
-                     }
+                    if(typeof(FileReader) != 'undefined'){
+                        img_holder.empty();
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                            $('<img/>',{'src':e.target.result,'class':'img-fluid','style':'max-width:100px;margin-bottom:10px;'}).appendTo(img_holder);
+                        }
+                        img_holder.show();
+                        reader.readAsDataURL($(this)[0].files[0]);
+                    }else{
+                        $(img_holder).html('This browser does not support FileReader');
+                    }
                 }else{
                     $(img_holder).empty();
                 }
             });
+            imagPreviewClear()
+            function imagPreviewClear(){
+                var the= $('input[type="file"][name="product_photo"]');
+                    var img_path = the[0].value;
+                    var img_holder = $('.img-holder');
+                    var extension = img_path.substring(img_path.lastIndexOf('.')+1).toLowerCase();
+
+                    if(extension == 'jpeg' || extension == 'jpg' || extension == 'png'){
+                        if(typeof(FileReader) != 'undefined'){
+                            img_holder.empty();
+                            var reader = new FileReader();
+                            reader.onload = function(e){
+                                $('<img/>',{'src':e.target.result,'class':'img-fluid','style':'max-width:100px;margin-bottom:10px;'}).appendTo(img_holder);
+                            }
+                            img_holder.show();
+                            reader.readAsDataURL(the[0].files[0]);
+                        }else{
+                            $(img_holder).html('This browser does not support FileReader');
+                        }
+                    }else{
+                        $(img_holder).empty();
+                    }
+            }
 
     });
+
+
+
+
+    $('#search').on('click',function(e){
+        table.on('preXhr.dt',function(e,settings,data){
+
+            data.product_name=$('#product_name_search').val();
+            data.product_price=$('#product_price_search').val();
+
+        });
+        e.preventDefault();
+        table.DataTable().ajax.reload();
+        return false;
+    })
+
+    $('#reset').on('click',function(e){
+        e.preventDefault();
+        table.on('preXhr.dt',function(e,settings,data){
+            data.product_name='';
+            data.product_price='';
+        });
+        table.DataTable().ajax.reload();
+        return false;
+    })
+   // captcha Refresh
+   captcha();
+   function captcha(){
+        $('.btn-refresh').on('click', function(e){
+            // e.preventDefault();
+            $.ajax({
+                type: 'GET',
+                url: "{{ route('product.refreshCaptcha') }}",
+                success: function(data){
+                    $(".captcha span").html(data.captcha);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+
+
+            });
+        });
+   };
+
+
+
 </script>
 
 @endsection

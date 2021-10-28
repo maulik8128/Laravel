@@ -86,6 +86,20 @@ https://github.com/diglactic/laravel-breadcrumbs
 https://github.com/nascent-africa/jetstrap
 https://github.com/michaeldyrynda/laravel-cascade-soft-deletes
 composer require dyrynda/laravel-cascade-soft-deletes
+/// fake-disposable mail validation
+https://github.com/Propaganistas/Laravel-Disposable-Email
+
+https://github.com/anhskohbo/no-captcha
+https://github.com/mewebstudio/captcha
+
+https://github.com/spatie/laravel-activitylog
+
+https://drawsql.app/templates  /// for sql table
+
+php artisan vendor:publish
+after press 0
+https://blog.quickadminpanel.com/ ///laravel resource site 
+<!-- https://wampserver.aviatechno.net/ -->
 
 https://www.cloudways.com/blog/best-laravel-packages/
 

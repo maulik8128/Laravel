@@ -24,7 +24,8 @@ class ProductsDataTable extends DataTable
             ->eloquent($query)
             ->addColumn('action', function($row){
 
-                $btn = '<a href="' .route('product.edit',['product'=>$row->id]).'" data-edit="'.$row->id.'" class="btn btn-primary edit-product">Edit</a>';
+                $btn = '<a href="' .route('product.edit',['product'=>$row->id]).'" data-edit="'.$row->id.'" class=" edit-product" title="Click here for edit content" ><i class="fas fa-edit" aria-hidden="true"></i></a>';
+                $btn.= '<a href="' .route('product.destroy',['product'=>$row->id]).'" data-delete="'.$row->id.'" class="delete-product" title="Click here for delete content" >&nbsp;<i class="fas fa-trash-alt" aria-hidden="true"></i></a>';
                  return $btn;
               });
             //   ->addColumn('stock', function(Product $Product) {
@@ -42,9 +43,18 @@ class ProductsDataTable extends DataTable
     {
         // $model = Product::with('product_stock');
         // return $model->newQuery();
-        $data = Product::query()
-        ->select('products.id','products.product_name','products.product_description','products.product_price','product_stocks.opening_stock')
-        ->leftJoin('product_stocks','products.id','=','product_stocks.product_id');
+        $product_name = $this->request()->get('product_name');
+        $product_price = $this->request()->get('product_price');
+
+        $data = Product::query();
+        $data->select('products.id','products.product_name','products.product_description','products.product_price','product_stocks.opening_stock');
+        $data->leftJoin('product_stocks','products.id','=','product_stocks.product_id');
+        if($product_name != ''){
+            $data->where('products.product_name', 'like', '%' . $product_name  . '%');
+        }
+        if($product_price != ''){
+            $data->where('products.product_price', 'like', '%' . $product_price  . '%');
+         }
         return $data;
     }
 
@@ -59,7 +69,12 @@ class ProductsDataTable extends DataTable
                     ->setTableId('products-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    // ->dom('Bfrtip')
+                    ->dom("<'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>")
+                    ->parameters([
+                        // 'drawCallback' => 'function() { alert("Table Draw Callback") }',
+                        'responsive'      => TRUE,
+                        'orderCellsTop'   => TRUE,
+                    ])
                     ->orderBy(0,'ase');
     }
 

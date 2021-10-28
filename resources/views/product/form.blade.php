@@ -39,4 +39,16 @@
 @error('opening_stock')
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
+<div class="form-group">
+    <label for="captcha">Captch</label>
+    <div class="captcha">
+        <span>{!!  captcha_img() !!}</span>
+        <button type="button" class="btn btn-success btn-refresh">Refresh</button>
+    </div>
+    <input type="text" id="captcha" name="captcha" class="form-control required" >
+    <span class="text-danger error-text  captcha_error"></span>
+</div>
+@error('opening_stock')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
 

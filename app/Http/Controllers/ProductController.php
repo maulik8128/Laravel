@@ -46,7 +46,8 @@ class ProductController extends Controller
                     'product_description' => 'required|min:5|max:200',
                     'product_price' => 'required|numeric|min:1',
                     'product_photo'=>  'image|mimes:jpg,jpeg,png|max:6000', ///kb
-                    'opening_stock' => 'required|numeric|min:1'
+                    'opening_stock' => 'required|numeric|min:1',
+                    'captcha' => "required|captcha:'. request('captcha') . '",
                     ]);
 
         if($validator->fails()){
@@ -120,7 +121,8 @@ class ProductController extends Controller
             'product_description' => 'required|min:5|max:200',
             'product_price' => 'required|numeric|min:1',
             'product_photo'=>  'image|mimes:jpg,jpeg,png|max:6000', ///kb
-            'opening_stock' => 'required|numeric|min:1'
+            'opening_stock' => 'required|numeric|min:1',
+            'captcha' => "required|captcha:'. request('captcha') . '",
             ]);
 
         if($validator->fails()){
@@ -157,8 +159,18 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Request $request)
     {
-        //
+        abort_if(!$request->ajax(),404);
+
+        $product = Product::findOrFail($request->id);
+        Storage::delete($product->product_photo);
+        $product->delete();
+        return true;
+    }
+
+    public function refreshCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
     }
 }

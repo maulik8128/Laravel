@@ -1,16 +1,7 @@
 @extends('layouts.app')
 @section('assets')
-
-<link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
-{{-- <link rel="stylesheet" href="{{ asset('assets/datatable/css/dataTables.bootstrap.min.css') }}"> --}}
-<link rel="stylesheet" href="{{ asset('assets/sweetalert2/sweetalert2.min.css') }}">
-<link rel="stylesheet" href="{{ asset('assets/toastr/toastr.min.css') }}">
-<script src="{{ asset('assets/jquery/jquery-3.6.0.min.js') }}"></script>
-
-<link rel="stylesheet" href="http://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css">
-<script src="http://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"></script>
+<link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/jquery.dataTables.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/responsive.dataTables.min.css') }}">
 {{-- <script src="/vendor/datatables/buttons.server-side.js"></script> --}}
 
 @endsection
@@ -65,9 +56,7 @@
 {{-- <script src="{{ asset('assets/bootstrap/js/bootstrap.js') }}"></script> --}}
 {{-- <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.js') }}"></script> --}}
 {{-- <script src="{{ asset('assets/datatable/js/dataTables.dataTables.min.js') }}"></script> --}}
-<script src="{{ asset('assets/sweetalert2/sweetalert2.min.js') }}"></script>
-<script src="{{ asset('assets/toastr/toastr.min.js') }}"></script>
-{{-- <script src="{{ asset('assets/toastr/toastr.js.map') }}"></script> --}}
+
 <script type="text/javascript">
  toastr.options.preventDuplicates = true;
 
@@ -105,7 +94,7 @@
                                     });
                                 }else{
                                     $(form)[0].reset();
-                                    $('#products-table').DataTable().ajax.reload(null, false);
+
                                     toastr.success(data.msg);
                                 }
                             },

@@ -9,6 +9,7 @@ use App\Http\Controllers\Payment;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RazorpayController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,35 +93,52 @@ use App\Http\Controllers\RazorpayController;
 // Route::get('/single', AboutController::class);
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Auth::routes([
+//     'register' => false, // Registration Routes...
+//     'reset' => false, // Password Reset Routes...
+//     'verify' => false, // Email Verification Routes...
+//   ]);
 
-Route::get('/category/getCategory',[CategoryController::class,'getCategory'])->name('Category.getCategory');
 
-Route::get('/category/ajaxview',[CategoryController::class,'ajaxview'])->name('Category.ajaxview');
 
-Route::resource('category', CategoryController::class)->middleware('auth');
-Route::resource('posts', PostController::class);
-Route::resource('posts.comment', CommentController::class)->middleware('auth');
-Route::resource('product', ProductController::class)->middleware('auth');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/location',[LocationController::class,'index'])->name('location');
-Route::post('/location/create',[LocationController::class,'create'])->name('location.create');
-Route::post('/location/storeCountry',[LocationController::class,'storeCountry'])->name('location.store.country');
-Route::post('/location/storeRegion',[LocationController::class,'storeRegion'])->name('location.store.region');
-Route::post('/location/storeCity',[LocationController::class,'storeCity'])->name('location.store.city');
-Route::post('/location/getRegion',[LocationController::class,'getRegion'])->name('location.getRegion');
-Route::get('/payment/submit',[Payment::class,'submit'])->name('payment.submit');
-Route::get('/payment/redirect',[Payment::class,'redirect'])->name('payment.redirect');
+    Route::get('/category/getCategory',[CategoryController::class,'getCategory'])->name('Category.getCategory');
+    Route::get('/category/ajaxview',[CategoryController::class,'ajaxview'])->name('Category.ajaxview');
+    Route::resource('category', CategoryController::class);
 
-Route::get('razorpay', [RazorpayController::class, 'razorpay'])->name('razorpay');
-Route::post('razorpaypayment', [RazorpayController::class, 'payment'])->name('payment');
+    Route::resource('posts', PostController::class);
+    Route::resource('posts.comment', CommentController::class);
 
-Route::get('mailable', function(){
-    $comment = App\Models\Comment::find(1);
-    return new App\Mail\CommentPosted($comment);
+    Route::get('refreshCaptcha',[ProductController::class,'refreshCaptcha'])->name('product.refreshCaptcha');
+    Route::resource('product', ProductController::class);
+
+    Route::get('/location',[LocationController::class,'index'])->name('location');
+    Route::post('/location/create',[LocationController::class,'create'])->name('location.create');
+    Route::post('/location/storeCountry',[LocationController::class,'storeCountry'])->name('location.store.country');
+    Route::post('/location/storeRegion',[LocationController::class,'storeRegion'])->name('location.store.region');
+    Route::post('/location/storeCity',[LocationController::class,'storeCity'])->name('location.store.city');
+    Route::post('/location/getRegion',[LocationController::class,'getRegion'])->name('location.getRegion');
+
+    Route::get('/payment/submit',[Payment::class,'submit'])->name('payment.submit');
+    Route::get('/payment/redirect',[Payment::class,'redirect'])->name('payment.redirect');
+
+    Route::get('razorpay', [RazorpayController::class, 'razorpay'])->name('razorpay');
+    Route::post('razorpaypayment', [RazorpayController::class, 'payment'])->name('payment');
+
+    Route::get('mailable', function(){
+        $comment = App\Models\Comment::find(1);
+        return new App\Mail\CommentPosted($comment);
+    });
+    Route::post('user/ajaxDisableAll',[UserController::class,'ajaxDisableAll'])->name('user.ajaxDisableAll');
+    Route::resource('user', UserController::class);
+
 });
+
+
