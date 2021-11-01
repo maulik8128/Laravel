@@ -12,39 +12,49 @@
 <div class="main-container">
     <div class="page">
         <div class="container-fluid">
-            <div class="col-lg-7 col-md-12">
-                <div class="table-wrap m-top-20">
-                    <table class="table responsive nowrap" cellpadding="0" cellspacing="0" width="100%" id="datatable_ajax">
-                        <thead>
-                            <tr class="heading">
-                                <th class="table-checkbox"><input type="checkbox" id="select_all_chk_box" class="select_all_chk_box"></th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>status</th>
-                                <th>Action</th>
-                            </tr>
-                            <tr class="filter">
-                                @php $i=0; @endphp
-                                <th class="th_{{ $i++; }}"><input type="hidden" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="id"></th>
-                                <th class="th_{{ $i++; }}"><input type="text" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="name"></th>
-                                <th class="th_{{ $i++; }}"><input type="text" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="email"></th>
-                                <th class="th_{{ $i++; }}">
-                                    <select class="form-control form-control-sm form-filter kt-input" id="status" name="status">
-                                    <option value="">select</option>
-                                    <option value="1">active</option>
-                                    <option value="0">inactive</option>
-                                </select></th>
-                                <th class="th_{{ $i++; }}">
-                                    <button class="btn btn-success btn-brand kt-btn btn-sm filter-submit" id="search" type="button">
-                                        <span><i class="fas fa-search"></i><span>&nbsp;Search</span></span>
-                                    </button>
-                                    <button class="btn btn-success btn-sm btn-secondary" id="reset" type="button">
-                                        <span><i class="fas fa-undo"></i><span>&nbsp;Reset</span></span>
-                                    </button>
-                                </th>
-                            </tr>
-                        </thead>
-                    </table>
+            {{-- <div class="create-btn pull-left header-btn">
+                <select class="form-control form-control-sm kt-input" id="bulk_action_selection">
+                    <option value="">Bulk Actions</option>
+                    <option value="delete">Delete</option>
+                </select>
+                <span class="button" ><a href="javascript:;" id="bulk_action_apply">Apply</a></span>
+                <span class="button"><a href="#">Add</a></span>
+            </div> --}}
+            <div class="table-main">
+                <div class="col-lg-7 col-md-12">
+                    <div class="table-wrap m-top-20">
+                        <table class="table responsive nowrap" cellpadding="0" cellspacing="0" width="100%" id="datatable_ajax">
+                            <thead>
+                                <tr class="heading">
+                                    <th class="table-checkbox"><input type="checkbox" id="select_all_chk_box" class="select_all_chk_box"></th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>status</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr class="filter">
+                                    @php $i=0; @endphp
+                                    <th class="th_{{ $i++; }}"><input type="hidden" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="id"></th>
+                                    <th class="th_{{ $i++; }}"><input type="text" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="name"></th>
+                                    <th class="th_{{ $i++; }}"><input type="text" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="email"></th>
+                                    <th class="th_{{ $i++; }}">
+                                        <select class="form-control form-control-sm form-filter kt-input" id="status" name="status">
+                                        <option value="">select</option>
+                                        <option value="1">active</option>
+                                        <option value="0">inactive</option>
+                                    </select></th>
+                                    <th class="th_{{ $i++; }}">
+                                        <button class="btn btn-success btn-brand kt-btn btn-sm filter-submit" id="search" type="button">
+                                            <span><i class="fas fa-search"></i><span>&nbsp;Search</span></span>
+                                        </button>
+                                        <button class="btn btn-success btn-sm btn-secondary" id="reset" type="button">
+                                            <span><i class="fas fa-undo"></i><span>&nbsp;Reset</span></span>
+                                        </button>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

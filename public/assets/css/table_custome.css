@@ -1,3 +1,27 @@
+
+body {
+
+
+
+	margin: 0px;
+
+
+
+	padding: 0px !important;
+
+
+
+	font-size: 14px;
+
+
+
+	font-family: 'Open Sans', sans-serif;
+
+
+
+}
+
+
 .create-btn .button {
 
 
@@ -74,7 +98,7 @@
 
 
 
-      background-color: #EFEEED;
+      background-color: #EFEEED !important;
 
 
 
@@ -82,7 +106,7 @@
 
 
 
-  table.dataTable tbody tr:hover, table.dataTable tbody tr.active{background-color:#fff;}
+  table.dataTable tbody tr:hover, table.dataTable tbody tr.active{background-color:#fff  !important;}
 
 
 
@@ -798,3 +822,68 @@
     order: 1;
 
 } */
+.nowrap{white-space:nowrap !important}
+
+.table.add-molding-table .form-control.status-total {width: 100% !important;}
+
+.qoute-details .add-molding-table .moldingtbody .status-item .ms-ctn {width: 120px !important; height:40px;}
+
+a, a:hover, a:focus {
+
+
+
+	outline: none;
+
+
+
+	border: 0px;
+
+
+
+	text-decoration: none;
+
+
+
+}
+
+.header-btn .button a {
+
+    width: 100%;
+
+    display: block;
+
+    line-height: 40px;
+
+}
+.create-btn .button a{color:#ffffff}
+
+
+.create-btn {
+
+    max-width: 400px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+        width: 100%;
+
+    margin: 20px 0px;
+
+}
+
+select.form-control, .chosen-container { margin-bottom: 0px !important;}
+/* select.form-control, .chosen-container {-moz-appearance: none; -webkit-appearance: none;appearance: none; background:url(../images/select_downArrow.png) no-repeat 94% center; margin-bottom: 0px !important;} */
+
+
+
+select.form-control.wide{background-position:97% center}
+
+
+
+select.form-control, .chosen-container:focus{border-color:#ccc !important}
+
+.form-control{height:40px; color:#000;}
+

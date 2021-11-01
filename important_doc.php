@@ -48,6 +48,14 @@ DEBUGBAR_ENABLED=false # deguger is disabled but error reporting works
 composer remove vendor/barryvdh/laravel-debugbar
 composer update
 
+<!-- laravel-telescope -->
+composer require laravel/telescope
+php artisan telescope:install
+php artisan migrate
+next see docs
+App\Providers\AppServiceProvider update
+composer.json update
+
 https://github.com/Wulfheart/pretty-routes
 composer require wulfheart/pretty_routes
 php artisan route:pretty
@@ -98,7 +106,7 @@ https://drawsql.app/templates  /// for sql table
 
 php artisan vendor:publish
 after press 0
-https://blog.quickadminpanel.com/ ///laravel resource site 
+https://blog.quickadminpanel.com/ ///laravel resource site
 <!-- https://wampserver.aviatechno.net/ -->
 
 https://www.cloudways.com/blog/best-laravel-packages/

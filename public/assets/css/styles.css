@@ -414,7 +414,7 @@ margin-left:228px;
 
 
 
- 
+
 
 
 
@@ -618,7 +618,7 @@ margin-left:228px;
 
 
 
-/* 
+/*
 
 
 
@@ -1670,7 +1670,7 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
 
 
 
-	color: #231f20; 
+	color: #231f20;
 
 
 
@@ -4250,7 +4250,7 @@ h4.empty-content{font-size:18px !important; color:#a0a0a0 !important; margin:40p
 
 
 
-.list-listing li{padding:18px 20px; color:#3c8aca; font-size:15px; font-weight:600;} 
+.list-listing li{padding:18px 20px; color:#3c8aca; font-size:15px; font-weight:600;}
 
 
 
@@ -4386,11 +4386,11 @@ h4.empty-content{font-size:18px !important; color:#a0a0a0 !important; margin:40p
 
 
 
-.btn-group {  
+.btn-group {
 
 
 
-    white-space: nowrap;               
+    white-space: nowrap;
 
 
 
@@ -4398,7 +4398,7 @@ h4.empty-content{font-size:18px !important; color:#a0a0a0 !important; margin:40p
 
 
 
-.btn-group .btn {  
+.btn-group .btn {
 
 
 
@@ -4430,7 +4430,7 @@ h4.empty-content{font-size:18px !important; color:#a0a0a0 !important; margin:40p
 
 
 
- .btn + .dropdown-toggle { 
+ .btn + .dropdown-toggle {
 
 
 
@@ -4514,7 +4514,7 @@ h4.empty-content{font-size:18px !important; color:#a0a0a0 !important; margin:40p
 
 
 
-.navbar-header, .navbar-container, .side-menubar, .page{transition:0.3s all ease-in-out;} 
+.navbar-header, .navbar-container, .side-menubar, .page{transition:0.3s all ease-in-out;}
 
 
 
@@ -7368,7 +7368,7 @@ span.required {color: #cc0000 !important; margin-left:4px}
 
 
 
-.ajax-main-loader #loader-datatable-img {    
+.ajax-main-loader #loader-datatable-img {
 
 
 
@@ -7572,7 +7572,7 @@ a[disabled]:hover{color: #7a7a78 !important;}
 
 
 
-.dataTables_wrapper .dataTables_paginate .ellipsis{border:0px !important;} 
+.dataTables_wrapper .dataTables_paginate .ellipsis{border:0px !important;}
 
 
 
@@ -8948,7 +8948,7 @@ background-color: #ccc;
 
 
 
-  display: inline-block; border-bottom: 0px; 
+  display: inline-block; border-bottom: 0px;
 
 
 
@@ -12652,7 +12652,7 @@ width: auto; padding-right: 10px;
 
 
 
-.quote-for-pagination .dataTables_paginate .paginate_button.current, 
+.quote-for-pagination .dataTables_paginate .paginate_button.current,
 
 
 
@@ -13938,7 +13938,7 @@ form#add_carrier_form .portlet-title {text-align: center;}
 
     -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
 
-    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;
 
 }
 
@@ -13950,7 +13950,7 @@ form#add_carrier_form .portlet-title {text-align: center;}
 
 .onoffswitch4-checkbox:checked + .onoffswitch4-label .onoffswitch4-switch {
 
-    right: 0px; 
+    right: 0px;
 
 }
 
@@ -14260,9 +14260,9 @@ label.store_pickup_options {
 
 .adding_tabs_sec .nav-tabs.tabs-full > li.is-filled > a {
 
-    background-color: #91ff91;  
+    background-color: #91ff91;
 
-}	
+}
 
 .adding_tabs_sec .nav-tabs.tabs-full > li.active a:after {
 
@@ -14508,7 +14508,7 @@ button#gmap_geocoding_btn {
 
 
 
-.highlight_text .tooltiptext{font-size: 11px; font-weight: 400; padding: 6px 10px; width: auto;} 
+.highlight_text .tooltiptext{font-size: 11px; font-weight: 400; padding: 6px 10px; width: auto;}
 
 
 .general-info-form .form-group img {

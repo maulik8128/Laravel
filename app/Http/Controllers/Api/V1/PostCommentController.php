@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StorePost;
-use App\Models\Post;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use PhpOffice\PhpSpreadsheet\Chart\Title;
-use Illuminate\Support\Facades\Log;
+use App\Models\Post;
+use App\Http\Resources\Post as PostResource;
+use App\Http\Resources\PostCollection;
+use App\Http\Requests\StorePost;
 
-class PostController extends Controller
+class PostCommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,18 +18,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return PostCollection::collection([
+         Post::with('comments')->paginate(10)
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('post.create');
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -44,7 +38,7 @@ class PostController extends Controller
 
         $post = Post::create($validated);
 
-        return redirect()->route('posts.show',['post'=>$post->id]);
+        return response()->json(['message'=> 'Post added successfully', 'post'=>$post]);
     }
 
     /**
@@ -53,11 +47,11 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request ,$id)
     {
-        Log::info('Showing the user profile for user: '.$id);
-        $post = Post::with('comments')->findOrFail($id);
-        return view('post.show',['post'=>$post]);
+        return PostResource::collection([
+            Post::with('comments')->findOrFail($id)
+        ]);
     }
 
     /**
@@ -66,10 +60,10 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $id)
     {
         $post = Post::findOrFail($id);
-        return view('post.edit',['post'=>$post]);
+
     }
 
     /**
@@ -85,7 +79,7 @@ class PostController extends Controller
         $validated = $request->validated();
         $post->fill($validated);
         $post->save();
-        return redirect()->route('posts.show',['post'=>$post->id]);
+        return response()->json(['message'=> 'Post updated successfully', 'post'=>$post]);
     }
 
     /**
@@ -94,8 +88,9 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id)->delete();
+        return response()->json(['message'=> 'Post Deleted successfully'],200);
     }
 }
