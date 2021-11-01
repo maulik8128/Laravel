@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -69,5 +70,60 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function register(Request $request)
+    {
+        abort_unless($request->ajax(),404);
+        $validator =Validator::make($request->all(),[
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'mobile_number' => ['required','numeric','digits:10'],
+            'avatar'=>  ['nullable','image', 'mimes:jpg,jpeg,png','max:6000'], ///kb
+        ]);
+
+        if($validator->fails()){
+            return response()->json(['code'=>0,'error'=>$validator->errors()->toArray()]);
+        }else{
+
+            $user = new User();
+            $user->email= $request->input('email');
+            $user->username= $request->input('username');
+            $user->company_name= $request->input('company_name');
+            $user->mobile_number= $request->input('mobile_number');
+            $user->password= Hash::make($request->input('password'));
+            if($request->hasFile('avatar')){
+                $path = $request->file('avatar')->store('avatar');
+                $user->avatar= $path;
+            }
+            $query = $user->save();
+            if(!$query){
+                return response()->json(['code'=>0,'msg'=>'Something went Wrong']);
+            }else{
+                return response()->json(['code'=>1,'msg'=>'New User has been successfully saved']);
+            }
+        }
+
+    }
+
+    public function checkEmailExist(Request $request)
+    {
+        abort_unless($request->ajax(),404);
+        $user = User::whereEmail($request->email)->first();
+        if($user === null){
+            return response()->json(['code'=>0]);
+        }else{
+            return response()->json(['code'=>1, 'msg'=>'The Email has already been taken.']);
+        }
+    }
+    public function checkUsernameExist(Request $request)
+    {
+        abort_unless($request->ajax(),404);
+        $user = User::whereUsername($request->username)->first();
+        if($user === null){
+            return response()->json(['code'=>0]);
+        }else{
+            return response()->json(['code'=>1, 'msg'=>'The Username has already been taken.']);
+        }
     }
 }

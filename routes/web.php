@@ -95,8 +95,11 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return redirect()->route('login');
 });
-
-Auth::routes(['register' => false]);
+Route::post('/user/registration', [App\Http\Controllers\auth\RegisterController::class,'register'])->name('register.create');
+Route::post('/user/checkEmailExist', [App\Http\Controllers\auth\RegisterController::class,'checkEmailExist'])->name('register.checkEmailExist');
+Route::post('/user/checkUsernameExist', [App\Http\Controllers\auth\RegisterController::class,'checkUsernameExist'])->name('register.checkUsernameExist');
+Auth::routes();
+// Auth::routes(['register' => false]);
 
 // Auth::routes([
 //     'register' => false, // Registration Routes...
