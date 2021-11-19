@@ -39,9 +39,8 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-
         $validator = Validator::make($request->all(),[
-            'email' => 'required|email',
+            'login'    => 'required',
             'password' => 'required|confirmed'
         ]);
 
@@ -50,14 +49,22 @@ class UserController extends Controller
             return response()->json(['status_code'=>400, 'message' => 'The given data was invalid.', 'errors' => $validator->errors()],400);
         }
 
-        $credentials =request(['email','password']);
+        $login_type = filter_var($request->input('login'), FILTER_VALIDATE_EMAIL )
+                    ? 'email'
+                    : 'username';
+
+        $request->merge([
+            $login_type => $request->input('login')
+        ]);
+
+        $credentials =request([$login_type,'password']);
 
         if(!Auth::attempt($credentials))
         {
             return response()->json(['status_code' => 500, 'message' => 'Unauthorized'],500);
         }
 
-        $user = User::where('email', $request->email)->first();
+        $user = User::where($login_type, $request->$login_type)->first();
         $tokenResult = $user->createToken('authToken')->plainTextToken;
 
         $user->save();

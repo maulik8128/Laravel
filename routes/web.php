@@ -8,6 +8,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Payment;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\RazorpayController;
 use App\Http\Controllers\UserController;
 
@@ -111,6 +112,7 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::post('/markNotification', [App\Http\Controllers\HomeController::class, 'markNotification'])->name('home.markNotification');
 
     Route::get('/category/getCategory',[CategoryController::class,'getCategory'])->name('Category.getCategory');
     Route::get('/category/ajaxview',[CategoryController::class,'ajaxview'])->name('Category.ajaxview');
@@ -141,6 +143,8 @@ Route::middleware(['auth'])->group(function(){
     });
     Route::post('user/ajaxDisableAll',[UserController::class,'ajaxDisableAll'])->name('user.ajaxDisableAll');
     Route::resource('user', UserController::class);
+
+    Route::resource('questions', QuestionsController::class);
 
 });
 

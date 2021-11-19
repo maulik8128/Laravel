@@ -56,6 +56,8 @@ next see docs
 App\Providers\AppServiceProvider update
 composer.json update
 
+https://github.com/spatie/laravel-permission
+
 https://github.com/Wulfheart/pretty-routes
 composer require wulfheart/pretty_routes
 php artisan route:pretty

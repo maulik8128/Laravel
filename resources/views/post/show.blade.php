@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Category')
+@section('title', 'Posts Show')
 @section('content')
 
 <div class="row">
@@ -13,6 +13,7 @@
         <div class="col-3">
         </div>
         <div class="page">
+            @if($post)
             <div class="container-fluid">
                 <h3>{{ $post->title }}</h3>
 
@@ -40,7 +41,7 @@
             </div>
 
             @endforeach
-
+            @endif
         </div>
         </div>
 

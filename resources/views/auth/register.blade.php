@@ -168,6 +168,7 @@ $(function(){
                             $(form).find('span.'+prefix+'_error').text(val[0]);
                         });
                     }else{
+                        console.log(data);
                         $(form)[0].reset();
                         toastr.success(data.msg);
                         location.href ="{{ route('login') }}";

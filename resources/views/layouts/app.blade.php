@@ -61,9 +61,29 @@
                                 </li>
                             @endif
                         @else
+                            @if (Route::has('category.index'))
+                                <li class="navbar-brand {{ (request()->segment(1) == 'category') ? 'active' : '' }}">
+                                    <a class="nav-link" href="{{ route('category.index') }}">{{ __('Category') }}</a>
+                                </li>
+                            @endif
+                            @if (Route::has('product.index'))
+                                <li class="navbar-brand {{ (request()->segment(1) == 'product') ? 'active' : '' }} ">
+                                    <a class="nav-link" href="{{ route('product.index') }}">{{ __('Product') }}</a>
+                                </li>
+                            @endif
+                            @if (Route::has('location'))
+                                <li class="navbar-brand {{ (request()->segment(1) == 'location') ? 'active' : '' }}">
+                                    <a class="nav-link" href="{{ route('location') }}">{{ __('Location') }}</a>
+                                </li>
+                            @endif
+                            @if (Route::has('user.index'))
+                                <li class="navbar-brand {{ (request()->segment(1) == 'user') ? 'active' : '' }} ">
+                                    <a class="nav-link" href="{{ route('user.index') }}">{{ __('User') }}</a>
+                                </li>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->username }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

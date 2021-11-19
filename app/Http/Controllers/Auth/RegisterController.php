@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Listeners\SendNewUserNotification;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Notifications\NewUserNotification;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Monolog\Handler\SendGridHandler;
+use Illuminate\Support\Facades\Notification;
 
 class RegisterController extends Controller
 {
@@ -100,6 +104,9 @@ class RegisterController extends Controller
             if(!$query){
                 return response()->json(['code'=>0,'msg'=>'Something went Wrong']);
             }else{
+                $admin = User::where('id','=','1')->get();
+                $user = User::findOrFail($user->id);
+                Notification::send($admin,new NewUserNotification($user));
                 return response()->json(['code'=>1,'msg'=>'New User has been successfully saved']);
             }
         }
