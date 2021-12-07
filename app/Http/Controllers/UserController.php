@@ -67,7 +67,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //hierarchy-records
+        //hierarchy-records-
         $users = User::select('id')->with('children:id,parent_id')->where('id',$id)->get();
         function recursive_foreach($users) {
             global $userdata;
