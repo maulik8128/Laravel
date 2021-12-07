@@ -16,7 +16,10 @@ class UsersSeeder extends Seeder
     {
         $userCount = max((int)$this->command->ask('How many users would  you like?',20),1);
         \App\Models\User::factory()->newUser()->create();
-        \App\Models\User::factory($userCount)->create();
+        \App\Models\User::factory($userCount)->make()->each(function($user) use($userCount){
+            $user->parent_id = random_int(0,$userCount);
+            $user->save();
+        });
 
     }
 }

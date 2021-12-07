@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Monolog\Handler\SendGridHandler;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -81,6 +82,7 @@ class RegisterController extends Controller
         $validator =Validator::make($request->all(),[
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'username' => ['required', 'string', 'max:255', 'unique:users'],
+            'name' => ['required','string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'mobile_number' => ['required','numeric','digits:10'],
             'avatar'=>  ['nullable','image', 'mimes:jpg,jpeg,png','max:6000'], ///kb
@@ -92,6 +94,7 @@ class RegisterController extends Controller
 
             $user = new User();
             $user->email= $request->input('email');
+            $user->name= $request->input('name');
             $user->username= $request->input('username');
             $user->company_name= $request->input('company_name');
             $user->mobile_number= $request->input('mobile_number');
@@ -101,11 +104,13 @@ class RegisterController extends Controller
                 $user->avatar= $path;
             }
             $query = $user->save();
+            event(new Registered($user));
             if(!$query){
                 return response()->json(['code'=>0,'msg'=>'Something went Wrong']);
             }else{
                 $admin = User::where('id','=','1')->get();
                 $user = User::findOrFail($user->id);
+                // send notification to Admin
                 Notification::send($admin,new NewUserNotification($user));
                 return response()->json(['code'=>1,'msg'=>'New User has been successfully saved']);
             }

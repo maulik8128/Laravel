@@ -5,12 +5,15 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ExceldataController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\Payment;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\RazorpayController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,7 +102,7 @@ Route::get('/', function () {
 Route::post('/user/registration', [App\Http\Controllers\auth\RegisterController::class,'register'])->name('register.create');
 Route::post('/user/checkEmailExist', [App\Http\Controllers\auth\RegisterController::class,'checkEmailExist'])->name('register.checkEmailExist');
 Route::post('/user/checkUsernameExist', [App\Http\Controllers\auth\RegisterController::class,'checkUsernameExist'])->name('register.checkUsernameExist');
-Auth::routes();
+Auth::routes(['verify' => true]);
 // Auth::routes(['register' => false]);
 
 // Auth::routes([
@@ -108,10 +111,14 @@ Auth::routes();
 //     'verify' => false, // Email Verification Routes...
 //   ]);
 
+Route::get('/google', [GoogleController::class,'redirectToGoogle'])->name('google');
+Route::get('/google/callback', [GoogleController::class,'handleGoogleCallback']);
 
 
-Route::middleware(['auth'])->group(function(){
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth','verified','userStatus'])->group(function(){
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+    ->withoutMiddleware(['userStatus'])->name('home');
     Route::post('/markNotification', [App\Http\Controllers\HomeController::class, 'markNotification'])->name('home.markNotification');
 
     Route::get('/category/getCategory',[CategoryController::class,'getCategory'])->name('Category.getCategory');
@@ -145,6 +152,18 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('user', UserController::class);
 
     Route::resource('questions', QuestionsController::class);
+
+    Route::get('/clear', function(){
+        Artisan::call('config:clear');
+        Artisan::call('cache:clear');
+        Artisan::call('view:clear');
+        Artisan::call('route:clear');
+
+        return redirect('/');
+    });
+
+    Route::get('/exceldata/createData',[ExceldataController::class,'createData'])->name('Exceldata.createData');
+    Route::view('/exceldata/create','exceldata.add_exceldata');
 
 });
 

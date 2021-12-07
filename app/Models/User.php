@@ -4,13 +4,15 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Prunable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+use Laravel\Passport\HasApiTokens;
+
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable,Prunable;
 
     /**
      * The attributes that are mass assignable.
@@ -18,9 +20,12 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'name',
         'username',
         'email',
         'password',
+        'mobile_number',
+
     ];
 
     /**
@@ -59,4 +64,25 @@ class User extends Authenticatable
     {
         return  ucfirst($value);
     }
+
+    public function prunable()
+    {
+        return static::where('id',23);
+    }
+
+    public function pruning()
+    {
+        echo 'Pruning '. $this->username . PHP_EOL;
+    }
+
+    public function children()
+    {
+        return $this->hasMany(User::class,'parent_id')->with('children:id,parent_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(User::class,'parent_id');
+    }
+
 }

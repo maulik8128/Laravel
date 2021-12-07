@@ -23,6 +23,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
+            'name' => $this->faker->unique()->name(),
             'username' => $this->faker->unique()->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'company_name' => $this->faker->company,
@@ -53,8 +54,11 @@ class UserFactory extends Factory
     {
         return $this->state(function(array $attributes){
             return [
+                'name'=>'Admin',
                 'email' => 'test@gmail.com',
-                'username'=>'test'
+                'username'=>'test',
+                'status' => TRUE,
+                'parent_id' => 0,
             ];
         });
     }

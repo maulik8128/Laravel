@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
 
             ////composer dump-autoload
         ]);
+        $this->command->call('passport:client',['--personal'=>'test']);
 
     }
 }

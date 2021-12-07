@@ -22,13 +22,14 @@ use App\Http\Controllers\Api\V1\PostCommentController;
 
 Route::post('/user/register',[UserController::class,'register']);
 Route::post('/user/login',[UserController::class,'login']);
-Route::post('/user/logout',[UserController::class,'logout']);
 
-Route::middleware('auth:sanctum')->group(function(){
+Route::middleware('auth:api')->group(function(){
+    Route::post('/user/logout',[UserController::class,'logout']);
 
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
+    // Route::get('/user', [UserController::class,'authenticatedUserDetails']);
 
     Route::apiResource('/posts',PostCommentController::class);
 

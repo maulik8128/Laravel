@@ -16,8 +16,11 @@ php artisan ui:controllers
 php artisan ui bootstrap
 
 npm install
-
 npm run development
+
+
+
+
 
 php artisan migrate
 
@@ -55,6 +58,9 @@ php artisan migrate
 next see docs
 App\Providers\AppServiceProvider update
 composer.json update
+
+'password' =>['required','string','confirmed',
+                Password::min(8)->letters()->numbers()->mixedCase()->symbols()]
 
 https://github.com/spatie/laravel-permission
 
@@ -305,5 +311,7 @@ php artisan tail [--path[="..."]] [--lines[="..."]] [connection]
 payment gatway
 https://test.instamojo.com/
 
+composer require maatwebsite/excel
+https://github.com/Maatwebsite/Laravel-Excel
 
 */

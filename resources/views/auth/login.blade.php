@@ -64,6 +64,15 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                @if (Route::has('google'))
+                                    <a class="btn btn-link" href="{{ route('google') }}">
+                                        {{ __('Login With Google') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

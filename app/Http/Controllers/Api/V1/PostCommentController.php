@@ -19,7 +19,7 @@ class PostCommentController extends Controller
     public function index()
     {
         return PostCollection::collection([
-         Post::with('comments')->paginate(10)
+         Post::with('comments')->paginate(5)
         ]);
     }
 

@@ -14,11 +14,10 @@ class AddSomefiledToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('name');
-            $table->string('username')->after('id')->unique();
+            $table->string('username')->after('id')->unique()->nullable();
             $table->string('avatar')->after('username')->nullable();
             $table->string('company_name')->after('avatar')->nullable();
-            $table->string('mobile_number')->after('company_name');
+            $table->string('mobile_number')->after('company_name')->nullable();
         });
     }
 
@@ -30,7 +29,11 @@ class AddSomefiledToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('username');
+            $table->dropColumn('avatar');
+            $table->dropColumn('company_name');
+            $table->dropColumn('mobile_number');
+
         });
     }
 }

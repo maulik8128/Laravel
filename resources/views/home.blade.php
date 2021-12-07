@@ -13,7 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    @if(session('login-success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('login-success') }}
+                        </div>
+                     @endif
                     {{ __('You are logged in!') }}
                     @if (auth()->user()->id ===1)
                         @forelse ($notifications as $notification)

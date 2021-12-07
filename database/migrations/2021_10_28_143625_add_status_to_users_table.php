@@ -14,7 +14,7 @@ class AddStatusToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('status')->default(FALSE);
+            $table->boolean('status')->default(FALSE)->after('name');
         });
     }
 

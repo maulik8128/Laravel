@@ -6,6 +6,7 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class PostCollection extends ResourceCollection
 {
+    public $collects = 'App\Http\Resources\Post';
     /**
      * Transform the resource collection into an array.
      *
@@ -14,17 +15,28 @@ class PostCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-         parent::toArray($request);
 
          return  [
             'data' => Post::collection($this->collection),
+            'data' => $this->collection,
             'pagination' => [
                 'total' => $this->total(),
                 'count' => $this->count(),
                 'per_page' => $this->perPage(),
                 'current_page' => $this->currentPage(),
-                'total_pages' => $this->lastPage()
+                'total_pages' => $this->lastPage(),
+                'current' => $this->currentPage(),
+                'last' => $this->lastPage(),
+                'base' => $this->url(1),
+                'next' => $this->nextPageUrl(),
+                'prev' => $this->previousPageUrl()
             ],
+            // 'links' =>[
+            //     'self' =>'link-value'
+            // ],
+            // 'other' =>[
+            //     'self2' => 'link-value2'
+            // ]
          ];
     }
 }
