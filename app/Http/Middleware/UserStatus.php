@@ -20,6 +20,6 @@ class UserStatus
         {
              return $next($request);
         }
-        abort(403);
+        abort(403,'Your Status not Active');
     }
 }

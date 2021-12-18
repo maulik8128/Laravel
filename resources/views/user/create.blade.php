@@ -4,16 +4,14 @@
 
 @section('content')
 <div class="col-6">
-    <h2>Edit User</h2>
-    <form action="{{ route('user.update',['user'=>$user->id]) }}" class="isautovalid"  method="POST" id="form_add_user" enctype="multipart/form-data">
-
-        @csrf
-        @method('PUT')
+    <h2>Add User</h2>
+    <form action="{{ route('user.store') }}" class="isautovalid"  method="POST" id="form_add_user" enctype="multipart/form-data">
         @if($errors)
             @foreach ($errors->all() as $error)
                 <div>{{ $error }}</div>
             @endforeach
         @endif
+        @csrf
         <div class="form-group">
             <label for="avatar">Avatar</label>
             <input id="avatar" type="file" name="avatar" class="form-control-file" accept='image/*'>
@@ -59,12 +57,31 @@
 
         <div class="form-group">
             <label for="mobile_number">Mobile Number<span>*</span></label>
-            <input id="mobile_number" type="text" class="form-control required  @error('mobile_number') is-invalid @enderror" name="mobile_number" value="{{ old('mobile_number', optional($user ?? null)->mobile_number) }}"  autocomplete="mobile_number" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" minlength="9" maxlength="10">
+            <input id="mobile_number" type="text" class="form-control required  @error('mobile_number') is-invalid @enderror" name="mobile_number" value="{{ old('mobile_number', optional($user ?? null)->mobile_number) }}"  autocomplete="mobile_number" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" minlength="9" maxlength="10" >
             <span class="text-danger error-text  mobile_number_error"></span>
         </div>
         @error('mobile_number')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+
+        <div class="form-group">
+            <label for="password">Password<span>*</span></label>
+            <input id="password" type="password" name="password" class="form-control required">
+            <span class="text-danger error-text  password_error"></span>
+        </div>
+        @error('password')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <div class="form-group">
+            <label for="password">Confirm Password<span>*</span></label>
+            <input id="password_confirmation" type="password" name="password_confirmation" class="form-control required">
+            <span class="text-danger error-text  password_confirmation_error"></span>
+        </div>
+        @error('password_confirmation')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <div class="form-group">
             <label for="company_name">Company Name<span>*</span></label>
             <input id="company_name" type="text" name="company_name" class="form-control required"  value="{{ old('company_name', optional($user ?? null)->company_name) }}" >
@@ -73,6 +90,7 @@
         @error('company_name')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+
         <div class="form-group  {{ $errors->has('roles') ? 'has-error' : '' }}">
             <label for="roles" >Role*</label>
             <span class="btn btn-info btn-sm select-all">select all</span>
@@ -93,7 +111,7 @@
         <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
                 <button type="submit" class="btn btn-primary">
-                    {{ __('Update') }}
+                    {{ __('Create') }}
                 </button>
             </div>
         </div>

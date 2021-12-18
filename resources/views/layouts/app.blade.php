@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="{{ asset('assets/sweetalert2/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/toastr/toastr.min.css') }}">
     <script src="{{ asset('assets/toastr/toastr.min.js') }}"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
+
     @yield('assets')
 </head>
 <body>
@@ -114,6 +116,7 @@
     <script src="{{ asset('assets/plugins/jquery-validation/js/additional-methods.min.js') }}"></script>
     <script src="{{ asset('assets/js/admin_validation.js') }}"></script>
     <script src="{{ asset('assets/sweetalert2/sweetalert2.min.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
+@yield('footerAsset')
 </footer>
 </html>

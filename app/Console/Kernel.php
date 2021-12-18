@@ -25,6 +25,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->command('activitylog:clean')->daily();
+        // $schedule->command('activitylog:clean')->weekly();
         $schedule->command('mode:prune',[
             '--model'=> [User::class]
         ])->daily()->at('23:59');

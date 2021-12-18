@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityLogsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Auth;
@@ -9,9 +10,11 @@ use App\Http\Controllers\ExceldataController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\Payment;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\RazorpayController;
+use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Artisan;
 
@@ -164,6 +167,13 @@ Route::middleware(['auth','verified','userStatus'])->group(function(){
 
     Route::get('/exceldata/createData',[ExceldataController::class,'createData'])->name('Exceldata.createData');
     Route::view('/exceldata/create','exceldata.add_exceldata');
+
+    Route::resource('permissions',PermissionsController::class);
+    Route::resource('roles',RolesController::class);
+
+    Route::resource('activityLogs',ActivityLogsController::class);
+
+
 
 });
 

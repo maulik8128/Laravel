@@ -3,7 +3,6 @@
 
 <link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/jquery.dataTables.min.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/responsive.dataTables.min.css') }}">
-{{-- <link rel="stylesheet" href="{{ asset('assets/datatable-1.11.3/css/buttons.dataTables.min.css') }}"> --}}
 
 @endsection
 @section('title', 'User')
@@ -13,16 +12,16 @@
     <div class="page">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-2  create-btn header-btn pull-left">
+                <div class="col-sm-2  create-btn  pull-left">
 
                     <select class="form-control form-control-sm kt-input" id="bulk_action_selection">
                         <option value="">Bulk Actions</option>
                         <option value="delete">Delete</option>
                     </select>
                 </div>
-                <div class="col-sm-4 create-btn ">
+                <div class="col-sm-4 create-btn">
                     <span class="button pull-left" ><a href="javascript:;" id="bulk_action_apply">Apply</a></span>
-                    <span class="button pull-left"><a href="{{ route('user.create') }}">Add</a></span>
+                    <span class="button pull-left"><a href="{{ route('permissions.create') }}">Add</a></span>
                 </div>
             </div>
             <div class="table-main">
@@ -33,23 +32,12 @@
                                 <tr class="heading">
                                     <th class="table-checkbox"><input type="checkbox" id="select_all_chk_box" class="select_all_chk_box"></th>
                                     <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
-                                    <th> &nbsp;&nbsp; status &nbsp;&nbsp;&nbsp;</th>
                                     <th>Action</th>
                                 </tr>
                                 <tr class="filter">
                                     @php $i=0; @endphp
                                     <th class="th_{{ $i++; }}"><input type="hidden" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="id"></th>
                                     <th class="th_{{ $i++; }}"><input type="text" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="name"></th>
-                                    <th class="th_{{ $i++; }}"><input type="text" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="email"></th>
-                                    <th class="th_{{ $i++; }}"><input type="hidden" class="form-control form-control-sm form-filter kt-input" data-col-index="1" name="id"></th>
-                                    <th class="th_{{ $i++; }}">
-                                        <select class="form-control form-control-sm form-filter kt-input" id="status" name="status">
-                                        <option value="">select</option>
-                                        <option value="1">active</option>
-                                        <option value="0">inactive</option>
-                                    </select></th>
                                     <th class="th_{{ $i++; }}">
                                         <button class="btn btn-success btn-brand kt-btn btn-sm filter-submit" id="search" type="button">
                                             <span><i class="fas fa-search"></i><span>&nbsp;Search</span></span>
@@ -69,8 +57,6 @@
 </div>
 <script src="{{ asset('assets/datatable-1.11.3/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('assets/datatable-1.11.3/js/dataTables.responsive.min.js') }}"></script>
-{{-- <script src="{{ asset('assets/datatable-1.11.3/js/dataTables.buttons.min.js') }}"></script> --}}
-{{-- <script src="/vendor/datatables/buttons.server-side.js"></script> --}}
 <script type="text/javascript">
  toastr.options.preventDuplicates = true;
  $.ajaxSetup({
@@ -85,19 +71,16 @@
         "aoColumns": [
         { "bSortable": false,sWidth: '5%' },
         { "bSortable": bSortable,sWidth: '0%' },
-        { "bSortable": bSortable,sWidth: '3%' },
-        { "bSortable": bSortable,sWidth: '5%' },
-        { "bSortable": false,sWidth: '5%' },
         { "bSortable": false,sWidth: '1%' }
         ],
         processing: true,
         serverSide: true,
-        responsive: false,
+        responsive: true,
         lengthMenu: [11, 50, 100, 200],
         orderCellsTop: true,
         dom: `<'row'<'col-sm-12'tr>>
         <'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-        ajax: "{{ route('user.index') }}",
+        ajax: "{{ route('permissions.index') }}",
         order: [0,'DESC'],
         'columnDefs': [
             { 'responsivePriority': 1, 'targets': 0 },
@@ -105,10 +88,7 @@
         ],
         columns: [
             {data: 'id', name: 'id', orderable: false, searchable: false},
-            {data: 'username', name: 'username'},
-            {data: 'email', name: 'email'},
-            {data: 'role', name: 'role', orderable: false, searchable: false},
-            {data: 'status', name: 'status'},
+            {data: 'name', name: 'name'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
@@ -164,35 +144,8 @@
      $(".bulk_action").prop('checked', $(this).prop('checked'));
     });
 
-    function disable_record(id,status){
-        var statusvar = (status!=1)?"Active":"Inactive'";
-        swal.fire({
-            title: 'Are you sure you want to '+statusvar+'?',
-            type: 'warning',
-            showCancelButton: true,
-            cancelButtonText : 'Cancel',
-            confirmButtonText: 'Ok',
-
-        }).then(function(result) {
-            if (result.value) {
-                jQuery.ajax({
-                    type : "POST",
-                    url : "{{ route('user.ajaxDisableAll') }}",
-                    data : {'id':id,'status':status},
-                    success: function(response) {
-                        console.log(response);
-                        $(tableId).DataTable().table().draw();
-                        // $(tableId).DataTable().ajax.reload();
-                    },
-                    error: function(XMLHttpRequest, textStatus, errorThrown) {
-                      alert(errorThrown);
-                    }
-                });
-            }
-        });
-    }
-    // delete record
-    $(tableId).on('click','.delete-user', function(e){
+        // delete record
+        table.on('click','.delete-permissions', function(e){
         e.preventDefault();
         var url= $(this).attr('href');
         var id = $(this).data('delete');
@@ -220,6 +173,7 @@
             }
         });
     });
+
 </script>
 
 @endsection
