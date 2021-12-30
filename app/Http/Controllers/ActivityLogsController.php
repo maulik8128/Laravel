@@ -40,7 +40,6 @@ class ActivityLogsController extends Controller
             })
             ->rawColumns(['action','id','properties','created_at'])
             ->make(true);
-            //test
 
         }
         return view('activityLogs.activityLogs');
