@@ -28,7 +28,7 @@ class UsersSeeder extends Seeder
         $userCount = max((int)$this->command->ask('How many users would  you like?',20),1);
         \App\Models\User::factory()->newUser()->create();
         $user = \App\Models\User::findOrFail(1);
-        $user->assignRole(['Admin','user']);
+        $user->assignRole(['Admin']);
         $user->givePermissionTo(['all']);
         $user->save();
         \App\Models\User::factory($userCount)->make()->each(function($user) use($userCount){
