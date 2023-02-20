@@ -19,10 +19,7 @@
         "maatwebsite/excel": "^3.1",
         "mews/captcha": "^3.2",
         "razorpay/razorpay": "^2.8",
-<<<<<<< HEAD
-=======
         "spatie/laravel-activitylog": "^4.3",
->>>>>>> nothing change
         "spatie/laravel-permission": "^5.3",
         "yajra/laravel-datatables": "^1.5"
     },
