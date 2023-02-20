@@ -162,7 +162,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
-        Mews\Captcha\CaptchaServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
@@ -234,7 +233,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-        'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
