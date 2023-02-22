@@ -18,11 +18,11 @@ class UsersSeeder extends Seeder
     {
         $permissions=['all','user-create','user-edit','user-delete','user-list','post-create'];
         foreach($permissions as $permission){
-            Permission::create(['name'=>$permission]);
+            Permission::updateOrCreate(['name'=>$permission]);
         }
         $roles = ['Admin','user'];
         foreach($roles as $role){
-           $roles = Role::create(['name'=>$role]);
+           $roles = Role::updateOrCreate(['name'=>$role]);
         }
 
         $userCount = max((int)$this->command->ask('How many users would  you like?',20),1);
