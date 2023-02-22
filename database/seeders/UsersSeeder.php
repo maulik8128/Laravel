@@ -26,8 +26,19 @@ class UsersSeeder extends Seeder
         }
 
         $userCount = max((int)$this->command->ask('How many users would  you like?',20),1);
-        \App\Models\User::factory()->newUser()->create();
-        $user = \App\Models\User::findOrFail(1);
+        // \App\Models\User::factory()->newUser()->create();
+        $user = \App\Models\User::updateOrCreate(['email' => 'test@gmail.com'],[
+            'name'=>'Admin',
+            'email' => 'test@gmail.com',
+            'username'=>'test',
+            'status' => TRUE,
+            'parent_id' => 0,
+            'company_name' =>'dev',
+            'mobile_number' =>123456789,
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => 'dsadadlasdasdsada',
+        ]);
         $user->assignRole(['Admin']);
         $user->givePermissionTo(['all']);
         $user->save();
