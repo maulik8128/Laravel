@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Cache;
 use Spatie\Permission\Models\Role;
 use Spatie\Activitylog\Models\Activity;
 
@@ -18,6 +19,9 @@ class UserController extends Controller
         $this->middleware('role:Admin', ['only' => ['create','store']]);
         $this->middleware('role:Admin', ['only' => ['edit','update']]);
         $this->middleware('role:Admin', ['only' => ['destroy']]);
+        Cache::remember('test', 10000, function () {
+            return 'test_cache';
+        });
 
     }
     /**
