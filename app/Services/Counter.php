@@ -20,6 +20,7 @@ class Counter implements CounterContract
     public function increment()
     {
         echo "test ".$this->counter ." Increment >".random_int(10,100);
+        
     }
 }
 
